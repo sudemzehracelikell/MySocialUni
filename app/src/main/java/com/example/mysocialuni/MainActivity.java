@@ -22,6 +22,24 @@ public class MainActivity extends AppCompatActivity {
         ImageButton eventButton = findViewById(R.id.eventbutton);
         ImageButton projectButton = findViewById(R.id.projectbutton);
 
+        homeButton.setOnClickListener(v -> {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragmentContainer, new HomeFragment())
+                    .commit();
+        });
+
+       eventButton.setOnClickListener(v -> {
+           getSupportFragmentManager().beginTransaction()
+                   .replace(R.id.fragmentContainer, new EventFragment())
+                   .commit();
+       });
+
+        projectButton.setOnClickListener(v -> {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragmentContainer, new ProjectsFragment())
+                    .commit();
+        });
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -29,4 +47,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+
 }
