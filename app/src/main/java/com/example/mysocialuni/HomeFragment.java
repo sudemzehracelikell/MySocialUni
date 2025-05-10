@@ -17,7 +17,7 @@ public class HomeFragment extends Fragment {
     private Button etkinliklerButton;
     private Button akademikTakvimButton;
     private Button yemekhaneButton;
-    private LinearLayout etkinlikKartlari;
+    private LinearLayout card_event1;
     private FrameLayout btnResimli1;
 
     @Override
@@ -30,9 +30,10 @@ public class HomeFragment extends Fragment {
         akademikTakvimButton = view.findViewById(R.id.btnAkademikTakvim);
         yemekhaneButton = view.findViewById(R.id.btnYemekhane);
         btnResimli1 = view.findViewById(R.id.btnResimli1);
-        etkinlikKartlari = view.findViewById(R.id.EtkinlikKarti1);
 
-        etkinlikKartlari.setOnClickListener(v -> {
+        card_event1 = view.findViewById(R.id.card_event);
+
+        card_event1.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ASEtkinlikKarti1Activity.class);
             startActivity(intent);
         });
