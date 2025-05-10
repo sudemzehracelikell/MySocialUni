@@ -412,51 +412,6 @@
                     android:textColor="@android:color/darker_gray"
                     android:textSize="14.7sp" />
             </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/EtkinlikKarti6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="16.8dp"
-                android:layout_marginTop="16.8dp"
-                android:layout_marginEnd="16.8dp"
-                android:layout_marginBottom="0dp"
-                android:background="@drawable/as_etkinliklerkart_background"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackground"
-                android:orientation="vertical"
-                android:padding="16.8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:padding="0dp"
-                    android:text="18 Mart"
-                    android:textColor="@android:color/white"
-                    android:textSize="18.9sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4.2dp"
-                    android:includeFontPadding="false"
-                    android:padding="0dp"
-                    android:text="İz Bırakanlar: Finans ve Stratejide Liderlik"
-                    android:textColor="@android:color/white"
-                    android:textSize="16.8sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2.1dp"
-                    android:includeFontPadding="false"
-                    android:padding="0dp"
-                    android:text="Endüstri Mühendisliği Kulübü  |  14:00 - 15:00"
-                    android:textColor="@android:color/darker_gray"
-                    android:textSize="14.7sp" />
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

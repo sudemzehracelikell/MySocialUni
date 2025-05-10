@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ana_sayfa_button_pic"
                 android:background="@android:color/transparent"
-                android:tint="#FFFFFF" />
+                app:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/etkinlikler_button_pic"
                 android:background="@android:color/transparent"
-                android:tint="#FFFFFF" />
+                app:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/proje_button_pic"
                 android:background="@android:color/transparent"
-                android:tint="#FFFFFF" />
+                app:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
