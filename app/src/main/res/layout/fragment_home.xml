@@ -34,7 +34,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="11dp"
-            android:background="@drawable/profile_button_pic" />
+            android:background="@drawable/as_profile_button_pic" />
     </RelativeLayout>
 
     <!-- Orta Kısım (Y ekseninde kaydırılabilir) -->
@@ -63,16 +63,6 @@
                     android:gravity="center">
 
                     <Button
-                        android:id="@+id/btnEtkinlikler"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="16dp"
-                        android:backgroundTint="#8e413e"
-                        android:text="Etkinlikler"
-                        android:textColor="#FFFFFF" />
-
-
-                    <Button
                         android:id="@+id/btnAkademikTakvim"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -82,12 +72,32 @@
                         android:textColor="#FFFFFF" />
 
                     <Button
+                        android:id="@+id/btnEtkinlikler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="#8e413e"
+                        android:text="Etkinlikler"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
                         android:id="@+id/btnYemekhane"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
                         android:backgroundTint="#8e413e"
                         android:text="Yemekhane"
                         android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnBasarılar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="#8e413e"
+                        android:text="Başarılar"
+                        android:textColor="#FFFFFF" />
+
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -117,16 +127,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="164dp"
                             android:layout_gravity="top"
-                            android:background="@drawable/resimbuton_background"
+                            android:background="@drawable/as_resimbuton_background"
                             android:clipToOutline="true"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/istun_foto" />
+                            android:src="@drawable/as_istun_foto" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom"
-                            android:background="@drawable/resimbutontext_backrgound"
+                            android:background="@drawable/as_resimbutontext_backrgound"
                             android:gravity="start|top"
                             android:paddingStart="10dp"
                             android:paddingTop="5dp"
@@ -148,20 +158,20 @@
                             android:layout_width="match_parent"
                             android:layout_height="164dp"
                             android:layout_gravity="top"
-                            android:background="@drawable/resimbuton_background"
+                            android:background="@drawable/as_resimbuton_background"
                             android:clipToOutline="true"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/istun_foto" />
+                            android:src="@drawable/as_haberler_button_pic" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="bottom"
-                            android:background="@drawable/resimbutontext_backrgound"
+                            android:background="@drawable/as_resimbutontext_backrgound"
                             android:gravity="start|top"
                             android:paddingStart="10dp"
                             android:paddingTop="5dp"
-                            android:text="İSTÜN'ü Tanı"
+                            android:text="Haberler"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp" />
                     </FrameLayout>
@@ -187,7 +197,7 @@
                 android:layout_marginTop="16.8dp"
                 android:layout_marginEnd="16.8dp"
                 android:layout_marginBottom="0dp"
-                android:background="@drawable/etkinliklerkart_background"
+                android:background="@drawable/as_etkinliklerkart_background"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
@@ -236,7 +246,7 @@
                 android:layout_marginBottom="0dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:background="@drawable/etkinliklerkart_background"
+                android:background="@drawable/as_etkinliklerkart_background"
                 android:foreground="?attr/selectableItemBackground">
 
                 <TextView
@@ -280,7 +290,7 @@
                 android:layout_marginBottom="0dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:background="@drawable/etkinliklerkart_background"
+                android:background="@drawable/as_etkinliklerkart_background"
                 android:foreground="?attr/selectableItemBackground">
 
                 <TextView
@@ -321,7 +331,7 @@
                 android:layout_marginTop="16.8dp"
                 android:layout_marginEnd="16.8dp"
                 android:layout_marginBottom="0dp"
-                android:background="@drawable/etkinliklerkart_background"
+                android:background="@drawable/as_etkinliklerkart_background"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
@@ -366,7 +376,7 @@
                 android:layout_marginTop="16.8dp"
                 android:layout_marginEnd="16.8dp"
                 android:layout_marginBottom="0dp"
-                android:background="@drawable/etkinliklerkart_background"
+                android:background="@drawable/as_etkinliklerkart_background"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
@@ -411,7 +421,7 @@
                 android:layout_marginTop="16.8dp"
                 android:layout_marginEnd="16.8dp"
                 android:layout_marginBottom="0dp"
-                android:background="@drawable/etkinliklerkart_background"
+                android:background="@drawable/as_etkinliklerkart_background"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
