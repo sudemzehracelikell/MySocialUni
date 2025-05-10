@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         });
 
-       eventButton.setOnClickListener(v -> {
-           getSupportFragmentManager().beginTransaction()
-                   .replace(R.id.fragmentContainer, new EventFragment())
-                   .commit();
-       });
+        eventButton.setOnClickListener(v -> {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragmentContainer, new EventFragment())
+                    .commit();
+        });
 
         projectButton.setOnClickListener(v -> {
             getSupportFragmentManager().beginTransaction()

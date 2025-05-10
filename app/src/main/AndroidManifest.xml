@@ -10,8 +10,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MySocialUni"
+        android:theme="@style/Theme.MySocilUni"
         tools:targetApi="31">
+
+        <activity android:name=".ASProfilActivity" />
+        <activity android:name=".ASEtkinliklerActivity" />
+        <activity android:name=".ASYemekhaneActivity" />
+        <activity android:name=".ASAkademikTakvimActivity" />
+        <activity android:name=".ASBoşSayfaActivity" />
+        <activity android:name=".ASEtkinlikKarti1Activity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

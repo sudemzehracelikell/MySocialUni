@@ -1,17 +1,453 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:background="#131313">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Üst Menü -->
+    <RelativeLayout
+        android:id="@+id/top_section"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="HOME"
-        android:textColor="@color/white"
-        android:background="#131313"
-        />
+        android:layout_height="100dp"
+        android:background="#1A1A1A">
 
-</FrameLayout>
+        <!-- Ana Sayfa Yazısı -->
+        <TextView
+            android:id="@+id/home_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ana Sayfa"
+            android:textSize="27sp"
+            android:textColor="#FFFFFF"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Profil Butonu -->
+        <Button
+            android:id="@+id/profil_button"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/profile_button_pic" />
+    </RelativeLayout>
+
+    <!-- Orta Kısım (Y ekseninde kaydırılabilir) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="710dp"
+        android:layout_below="@id/top_section">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Kaydırılabilir Orta Kısım Butonları -->
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:scrollbars="none"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnEtkinlikler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="#8e413e"
+                        android:text="Etkinlikler"
+                        android:textColor="#FFFFFF" />
+
+
+                    <Button
+                        android:id="@+id/btnAkademikTakvim"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="#8e413e"
+                        android:text="Akademik Takvim"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnYemekhane"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#8e413e"
+                        android:text="Yemekhane"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Kaydırılabilir Resim Butonları -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="14dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <FrameLayout
+                        android:id="@+id/btnResimli1"
+                        android:layout_width="360dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="164dp"
+                            android:layout_gravity="top"
+                            android:background="@drawable/resimbuton_background"
+                            android:clipToOutline="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/istun_foto" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/resimbutontext_backrgound"
+                            android:gravity="start|top"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:text="İSTÜN'ü Tanı"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/btnResimli2"
+                        android:layout_width="360dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="164dp"
+                            android:layout_gravity="top"
+                            android:background="@drawable/resimbuton_background"
+                            android:clipToOutline="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/istun_foto" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/resimbutontext_backrgound"
+                            android:gravity="start|top"
+                            android:paddingStart="10dp"
+                            android:paddingTop="5dp"
+                            android:text="İSTÜN'ü Tanı"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/yakinEtkinliklerBaslik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yakın Etkinlikler"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp" />
+
+            <LinearLayout
+                android:id="@+id/EtkinlikKarti1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16.8dp"
+                android:layout_marginTop="16.8dp"
+                android:layout_marginEnd="16.8dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/etkinliklerkart_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:padding="16.8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="18 Mart"
+                    android:textColor="@android:color/white"
+                    android:textSize="18.9sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4.2dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="İz Bırakanlar: Finans ve Stratejide Liderlik"
+                    android:textColor="@android:color/white"
+                    android:textSize="16.8sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.1dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="Endüstri Mühendisliği Kulübü  |  14:00 - 15:00"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14.7sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/EtkinlikKarti2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16.8dp"
+                android:layout_marginStart="16.8dp"
+                android:layout_marginEnd="16.8dp"
+                android:layout_marginTop="16.8dp"
+                android:layout_marginBottom="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/etkinliklerkart_background"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18 Mart"
+                    android:textColor="@android:color/white"
+                    android:textSize="18.9sp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="İz Bırakanlar: Finans ve Stratejide Liderlik"
+                    android:textColor="@android:color/white"
+                    android:textSize="16.8sp"
+                    android:layout_marginTop="4.2dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Endüstri Mühendisliği Kulübü  |  14:00 - 15:00"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14.7sp"
+                    android:layout_marginTop="2.1dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/EtkinlikKarti3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16.8dp"
+                android:layout_marginStart="16.8dp"
+                android:layout_marginEnd="16.8dp"
+                android:layout_marginTop="16.8dp"
+                android:layout_marginBottom="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/etkinliklerkart_background"
+                android:foreground="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18 Mart"
+                    android:textColor="@android:color/white"
+                    android:textSize="18.9sp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="İz Bırakanlar: Finans ve Stratejide Liderlik"
+                    android:textColor="@android:color/white"
+                    android:textSize="16.8sp"
+                    android:layout_marginTop="4.2dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Endüstri Mühendisliği Kulübü  |  14:00 - 15:00"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14.7sp"
+                    android:layout_marginTop="2.1dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/EtkinlikKarti4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16.8dp"
+                android:layout_marginTop="16.8dp"
+                android:layout_marginEnd="16.8dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/etkinliklerkart_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:padding="16.8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="18 Mart"
+                    android:textColor="@android:color/white"
+                    android:textSize="18.9sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4.2dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="İz Bırakanlar: Finans ve Stratejide Liderlik"
+                    android:textColor="@android:color/white"
+                    android:textSize="16.8sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.1dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="Endüstri Mühendisliği Kulübü  |  14:00 - 15:00"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14.7sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/EtkinlikKarti5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16.8dp"
+                android:layout_marginTop="16.8dp"
+                android:layout_marginEnd="16.8dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/etkinliklerkart_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:padding="16.8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="18 Mart"
+                    android:textColor="@android:color/white"
+                    android:textSize="18.9sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4.2dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="İz Bırakanlar: Finans ve Stratejide Liderlik"
+                    android:textColor="@android:color/white"
+                    android:textSize="16.8sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.1dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="Endüstri Mühendisliği Kulübü  |  14:00 - 15:00"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14.7sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/EtkinlikKarti6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16.8dp"
+                android:layout_marginTop="16.8dp"
+                android:layout_marginEnd="16.8dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/etkinliklerkart_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                android:padding="16.8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="18 Mart"
+                    android:textColor="@android:color/white"
+                    android:textSize="18.9sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4.2dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="İz Bırakanlar: Finans ve Stratejide Liderlik"
+                    android:textColor="@android:color/white"
+                    android:textSize="16.8sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2.1dp"
+                    android:includeFontPadding="false"
+                    android:padding="0dp"
+                    android:text="Endüstri Mühendisliği Kulübü  |  14:00 - 15:00"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14.7sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
