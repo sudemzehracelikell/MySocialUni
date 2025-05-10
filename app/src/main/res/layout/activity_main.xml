@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Etkinlikler"
+                android:text="Ana Sayfa"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -92,7 +92,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Etkinlikler"
+                android:text="Projeler"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp" />
         </LinearLayout>

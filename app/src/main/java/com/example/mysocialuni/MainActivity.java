@@ -22,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
         ImageButton eventButton = findViewById(R.id.eventbutton);
         ImageButton projectButton = findViewById(R.id.projectbutton);
 
+        // Başlangıçta HomeFragment'ı göster
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentContainer, new HomeFragment())
+                .commit();
+
         homeButton.setOnClickListener(v -> {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragmentContainer, new HomeFragment())
