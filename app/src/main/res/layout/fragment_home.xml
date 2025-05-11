@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/top_section"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:background="#1A1A1A">
 
         <!-- Ana Sayfa Yazısı -->
@@ -18,29 +18,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ana Sayfa"
-            android:textSize="27sp"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-medium"
             android:textColor="#FFFFFF"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="8dp" />
 
         <!-- Profil Butonu -->
         <Button
             android:id="@+id/profil_button"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="11dp"
-            android:background="@drawable/as_profile_button_pic" />
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/baseline_account_circle_24" />
     </RelativeLayout>
 
     <!-- Orta Kısım (Y ekseninde kaydırılabilir) -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="710dp"
+        android:layout_height="match_parent"
         android:layout_below="@id/top_section">
 
         <LinearLayout
@@ -191,6 +192,9 @@
 
 
 
+            <include layout="@layout/card_event" />
+            <include layout="@layout/card_event" />
+            <include layout="@layout/card_event" />
             <include layout="@layout/card_event" />
             <include layout="@layout/card_event" />
             <include layout="@layout/card_event" />

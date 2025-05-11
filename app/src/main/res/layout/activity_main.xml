@@ -20,27 +20,27 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="#131313"
-        android:padding="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/homebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ana_sayfa_button_pic"
                 android:background="@android:color/transparent"
+                android:src="@drawable/baseline_account_balance_24"
                 app:tint="#FFFFFF" />
 
             <TextView
@@ -55,15 +55,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/eventbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/etkinlikler_button_pic"
                 android:background="@android:color/transparent"
+                android:src="@drawable/calendarbutton"
                 app:tint="#FFFFFF" />
 
             <TextView
@@ -78,15 +78,15 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/projectbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/proje_button_pic"
                 android:background="@android:color/transparent"
+                android:src="@drawable/projectsbutton"
                 app:tint="#FFFFFF" />
 
             <TextView

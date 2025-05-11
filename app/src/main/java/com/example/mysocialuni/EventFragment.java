@@ -6,8 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EventFragment extends Fragment {
+
+    private RecyclerView recyclerView;
+    private EventAdapter eventAdapter;
+    private List<EventModel> eventList;
 
     public EventFragment() {
         // Zorunlu boş yapıcı
@@ -16,7 +25,30 @@ public class EventFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // fragment_event.xml dosyasını bağla
-        return inflater.inflate(R.layout.fragment_event, container, false);
+        // Layout'u bağla
+        View view = inflater.inflate(R.layout.fragment_event, container, false);
+
+        // RecyclerView başlat
+        recyclerView = view.findViewById(R.id.recyclerViewEvents);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // Örnek veriler
+        eventList = new ArrayList<>();
+        eventList.add(new EventModel("18", "Mart", "Finans ve Stratejide Liderlik", "Endüstri Mühendisliği kulübü   14.00 - 15.00"));
+        eventList.add(new EventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new EventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new EventModel("23","Haziran","İstech - 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        // Daha fazlasını ekleyebilirsin
+
+        // Adapter tanımla
+        eventAdapter = new EventAdapter(eventList);
+        recyclerView.setAdapter(eventAdapter);
+
+        return view;
     }
 }
