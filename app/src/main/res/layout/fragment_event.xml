@@ -56,15 +56,14 @@
                 <CalendarView
                     android:id="@+id/calendarView2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <include layout="@layout/card_event" />
-
-                <include layout="@layout/card_event" />
-
-                <include layout="@layout/card_event" />
-
-                <include layout="@layout/card_event" />
+                    android:layout_height="wrap_content"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="8dp"/>
 
             </LinearLayout>
         </ScrollView>
