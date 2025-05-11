@@ -34,10 +34,15 @@ public class EventFragment extends Fragment {
 
         // Örnek veriler
         eventList = new ArrayList<>();
-        eventList.add(new EventModel("18", "Mart", "İz Bırakanlar: Finans ve Stratejide Liderlik", "Endüstri Mühendisliği kulübü   14.00 - 15.00"));
+        eventList.add(new EventModel("18", "Mart", "Finans ve Stratejide Liderlik", "Endüstri Mühendisliği kulübü   14.00 - 15.00"));
         eventList.add(new EventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
         eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
         eventList.add(new EventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new EventModel("23","Haziran","İstech - 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
         // Daha fazlasını ekleyebilirsin
 
         // Adapter tanımla
