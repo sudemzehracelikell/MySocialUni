@@ -22,6 +22,7 @@ public class HomeFragment extends Fragment {
     private Button etkinliklerButton;
     private Button akademikTakvimButton;
     private Button yemekhaneButton;
+    private Button btnBasarılar;
     private LinearLayout card_event1;
     private FrameLayout btnResimli1;
     private RecyclerView recyclerView;
@@ -39,6 +40,12 @@ public class HomeFragment extends Fragment {
         yemekhaneButton = view.findViewById(R.id.btnYemekhane);
         btnResimli1 = view.findViewById(R.id.btnResimli1);
         card_event1 = view.findViewById(R.id.card_event);
+        btnBasarılar = view.findViewById(R.id.btnBasarılar);
+
+        btnBasarılar.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ASBaşarılarActivity.class);
+            startActivity(intent);
+        });
 
         card_event1.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ASEtkinlikKarti1Activity.class);
