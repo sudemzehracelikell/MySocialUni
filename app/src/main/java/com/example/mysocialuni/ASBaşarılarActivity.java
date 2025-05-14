@@ -18,7 +18,7 @@ public class ASBaşarılarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Ana sayfaya dön
-                Intent intent = new Intent(ASBaşarılarActivity.this, HomeFragment.class);
+                Intent intent = new Intent(ASBaşarılarActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish(); // Profil sayfasını kapat
             }
