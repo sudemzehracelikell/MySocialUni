@@ -13,7 +13,7 @@ public class ASBaşarılarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.as_basarilar_button);
 
-        Button geriDonButton = findViewById(R.id.geri_don_button);
+        Button geriDonButton = findViewById(R.id.geri_don_button7);
         geriDonButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,3 +25,5 @@ public class ASBaşarılarActivity extends AppCompatActivity {
         });
     }
 }
+//hata var duzeltılecek
+//uygulamaya 2 kere tıklayınca kapanıyor

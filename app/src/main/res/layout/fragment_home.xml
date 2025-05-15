@@ -60,6 +60,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:orientation="horizontal"
                     android:gravity="center">
 
@@ -200,5 +201,4 @@
                 android:padding="1dp" />
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>

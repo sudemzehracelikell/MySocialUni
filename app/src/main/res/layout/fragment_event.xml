@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventFragment">
+    tools:context=".EventFragment"
+    android:background="#131313">
 
     <!-- Etkinlik Ekle Butonu -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#131313">
 
         <RelativeLayout
             android:id="@+id/top_section"
@@ -53,12 +55,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                >
+
 
                 <CalendarView
                     android:id="@+id/calendarView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:focusedMonthDateColor="#FFFFFFFF"
+                    android:unfocusedMonthDateColor="@android:style/TextAppearance.Small"
+                    android:dateTextAppearance="@android:style/TextAppearance.Small"
+                    android:weekDayTextAppearance="@android:style/TextAppearance.Small"
+                    android:weekSeparatorLineColor="@android:style/TextAppearance.Small"
+                    android:selectedWeekBackgroundColor="@android:style/TextAppearance.Small" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewEvents"

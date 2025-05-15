@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#131313">
+    android:background="#131313"
+    android:backgroundTint="#131313">
+
 
     <Button
         android:id="@+id/geri_don_button"
@@ -31,6 +33,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/sayfa_baslik2"
         android:layout_marginTop="20dp"
+        android:fadeScrollbars="false"
         android:padding="16dp">
 
         <LinearLayout
@@ -51,37 +54,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:text="Finans ve Stratejide Liderlik Üzerine İlham Verici Bir Buluşma!"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="Finans ve Stratejide Liderlik Üzerine İlham Verici Bir Buluşma!" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:textColor="#8B8B8B"
-                android:textSize="17sp"
-
                 android:text="Finans ve stratejik liderlik konularında kendinizi geliştirmek, alanında uzman bir isimden değerli bilgiler edinmek ister misiniz?
-İstanbul Sağlık ve Teknoloji Üniversitesi’nde düzenlenecek İz Bırakanlar: Finans ve Stratejide Liderlik etkinliğinde, sektörün deneyimli ismi Cemal Tosun bizlerle olacak. Finansal yönetim, stratejik karar alma süreçleri ve liderlik konularında değerli bilgiler paylaşacak olan Cemal Tosun’un deneyimlerinden faydalanmak için bu özel etkinliği kaçırmayın!" />
+İstanbul Sağlık ve Teknoloji Üniversitesi’nde düzenlenecek İz Bırakanlar: Finans ve Stratejide Liderlik etkinliğinde, sektörün deneyimli ismi Cemal Tosun bizlerle olacak. Finansal yönetim, stratejik karar alma süreçleri ve liderlik konularında değerli bilgiler paylaşacak olan Cemal Tosun’un deneyimlerinden faydalanmak için bu özel etkinliği kaçırmayın!"
+                android:textColor="#8B8B8B"
+
+                android:textSize="17sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:text="📅 Tarih: 24 Şubat Pazartesi 📍 Yer: A Blok 1. Kat Oditoryum                                                                 ⏰ Saat: 14.00 - 15.00"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:text="📅 Tarih: 24 Şubat Pazartesi 📍 Yer: A Blok 1. Kat Oditoryum                                                                 ⏰ Saat: 14.00 - 15.00" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:text="Etkinlik, Endüstri Mühendisliği Kulübü tarafından düzenlenmektedir. Kendinizi finansal strateji ve liderlik alanlarında geliştirmek için bu fırsatı değerlendirin!                                                                 💡Sen de yerini ayırt ve geleceğine yön ver!"
                 android:textColor="#8B8B8B"
-                android:textSize="17sp"
-                android:text="Etkinlik, Endüstri Mühendisliği Kulübü tarafından düzenlenmektedir. Kendinizi finansal strateji ve liderlik alanlarında geliştirmek için bu fırsatı değerlendirin!                                                                 💡Sen de yerini ayırt ve geleceğine yön ver!" />
+                android:textSize="17sp" />
 
         </LinearLayout>
     </ScrollView>

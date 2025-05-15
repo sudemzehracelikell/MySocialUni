@@ -5,7 +5,7 @@
     android:background="#F5F5F5">
 
     <Button
-        android:id="@+id/geri_don_button"
+        android:id="@+id/geri_don_button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ana Sayfaya Dön"
