@@ -20,6 +20,7 @@
         <activity android:name=".ASBoşSayfaActivity" />
         <activity android:name=".ASEtkinlikKarti1Activity" />
         <activity android:name=".ASBaşarılarActivity" />
+        <activity android:name=".ASKulüplerActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

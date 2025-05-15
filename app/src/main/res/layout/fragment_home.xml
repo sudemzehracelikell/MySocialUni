@@ -99,6 +99,15 @@
                         android:text="Başarılar"
                         android:textColor="#FFFFFF" />
 
+                    <Button
+                        android:id="@+id/btnKulupler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="#8e413e"
+                        android:text="Kulüpler"
+                        android:textColor="#FFFFFF" />
+
                 </LinearLayout>
             </HorizontalScrollView>
 
