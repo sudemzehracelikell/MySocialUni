@@ -1,16 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventFragment">
+    tools:context=".EventFragment"
+    android:background="#131313">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Etkinlik Ekle Butonu -->
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:text="EVENT"
-        android:textColor="@color/white"
-        android:background="#131313"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#131313">
 
-</FrameLayout>
+        <RelativeLayout
+            android:id="@+id/top_section"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#1A1A1A">
+
+            <!-- Ana Sayfa Yazısı -->
+            <TextView
+                android:id="@+id/home_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Etkinlikler"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
+
+            <!-- Profil Butonu -->
+            <Button
+                android:id="@+id/profil_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/baseline_account_circle_24" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusedMonthDateColor="#FFFFFFFF"
+                    android:unfocusedMonthDateColor="@android:style/TextAppearance.Small"
+                    android:dateTextAppearance="@android:style/TextAppearance.Small"
+                    android:weekDayTextAppearance="@android:style/TextAppearance.Small"
+                    android:weekSeparatorLineColor="@android:style/TextAppearance.Small"
+                    android:selectedWeekBackgroundColor="@android:style/TextAppearance.Small" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:padding="1dp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="#8e413e"
+        android:text="+ Etkinlik Ekle"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

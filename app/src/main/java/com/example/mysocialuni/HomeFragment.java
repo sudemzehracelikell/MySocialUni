@@ -10,6 +10,11 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -17,8 +22,12 @@ public class HomeFragment extends Fragment {
     private Button etkinliklerButton;
     private Button akademikTakvimButton;
     private Button yemekhaneButton;
-    private LinearLayout etkinlikKartlari;
+    private Button btnBasarılar;
+    private LinearLayout card_event1;
     private FrameLayout btnResimli1;
+    private RecyclerView recyclerView;
+    private EventAdapter eventAdapter;
+    private List<EventModel> eventList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,9 +39,15 @@ public class HomeFragment extends Fragment {
         akademikTakvimButton = view.findViewById(R.id.btnAkademikTakvim);
         yemekhaneButton = view.findViewById(R.id.btnYemekhane);
         btnResimli1 = view.findViewById(R.id.btnResimli1);
-        etkinlikKartlari = view.findViewById(R.id.EtkinlikKarti1);
+        card_event1 = view.findViewById(R.id.card_event);
+        btnBasarılar = view.findViewById(R.id.btnBasarılar);
 
-        etkinlikKartlari.setOnClickListener(v -> {
+        btnBasarılar.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ASBaşarılarActivity.class);
+            startActivity(intent);
+        });
+
+        card_event1.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ASEtkinlikKarti1Activity.class);
             startActivity(intent);
         });
@@ -61,6 +76,17 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(getActivity(), ASBoşSayfaActivity.class);
             startActivity(intent);
         });
+
+        recyclerView = view.findViewById(R.id.recyclerViewEventsHome);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        eventList = new ArrayList<>();
+        eventList.add(new EventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new EventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+
+        eventAdapter = new EventAdapter(eventList);
+        recyclerView.setAdapter(eventAdapter);
 
         return view;
     }
