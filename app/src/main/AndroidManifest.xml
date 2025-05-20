@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Permissions (must be outside <application>) -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -33,15 +37,7 @@
         <activity android:name=".EditProfileActivity"
             android:exported="false" />
 
-        <activity android:name=".ProfileActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".ASProfilActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".ASEtkinliklerActivity" />
         <activity android:name=".ASYemekhaneActivity" />
         <activity android:name=".ASAkademikTakvimActivity" />
@@ -53,6 +49,8 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
-
 </manifest>
