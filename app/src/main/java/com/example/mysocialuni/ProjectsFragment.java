@@ -1,5 +1,6 @@
 package com.example.mysocialuni;
 
+import android.content.Intent;
 import android.graphics.RenderEffect;
 import android.graphics.Shader;
 import android.graphics.Typeface;
@@ -81,8 +82,6 @@ public class ProjectsFragment extends Fragment {
             imageView_backgroundProjects.setRenderEffect(blurEffect);
         }
 
-        button_addProject.setOnClickListener(v -> {
-
-        });
+        button_addProject.setOnClickListener(v -> startActivity(new Intent(appCompatActivity, AddProjectActivity.class)));
     }
 }

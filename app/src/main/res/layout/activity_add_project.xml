@@ -34,12 +34,11 @@
         android:id="@+id/button_addProject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:backgroundTint="#8e413e"
-        android:text="+ Proje Ekle"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#515151"
+        android:text="Resim Yükle"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 package com.example.mysocialuni;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class AddProjectActivity extends AppCompatActivity {
+
+    private ImageButton goback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,8 @@ public class AddProjectActivity extends AppCompatActivity {
             return insets;
         });
 
+        goback = findViewById(R.id.imageButton_goBack);
+        goback.setOnClickListener(v -> finish());
 
     }
 }
