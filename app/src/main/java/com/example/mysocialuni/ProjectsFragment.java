@@ -1,10 +1,12 @@
 package com.example.mysocialuni;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ProjectsFragment extends Fragment {
 
@@ -20,11 +23,14 @@ public class ProjectsFragment extends Fragment {
     private ListView listViewProjects;
     private ArrayList<ProjectsItem> projectArrayList;
 
+    private TextView textView_title;
+
     public ProjectsFragment() {
         // Zorunlu boş yapıcı
     }
 
     public void init(View view){
+        textView_title = view.findViewById(R.id.profile_text);
         listViewProjects = view.findViewById(R.id.listview_projects);
 
         projectArrayList = new ArrayList<>();
@@ -48,6 +54,7 @@ public class ProjectsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         init(view);
+        textView_title.setTypeface(Typeface.createFromAsset(appCompatActivity.getAssets(), "fonts/yazı_tipi1.ttf"));
 
         String[] kullanicilar = {"rraeichp","yusufdeligoz","beyzanurbayır","lastvenush","karamanli"};
         String[] kullanicilar2 = {"yusufdeligoz","rraeichp","beyzanurbayır","lastvenush","karamanli"};
