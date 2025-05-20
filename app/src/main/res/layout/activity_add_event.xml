@@ -13,34 +13,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/editTextGun"
-            android:hint="Gün"
-            android:inputType="number"
+        <Spinner
+            android:id="@+id/spinnerGun"
+            android:backgroundTint="@color/white"
+            android:popupBackground="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
 
-        <EditText
-            android:id="@+id/editTextAy"
-            android:hint="Ay"
+        <Spinner
+            android:id="@+id/spinnerAy"
+            android:backgroundTint="@color/white"
+            android:popupBackground="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
 
         <EditText
             android:id="@+id/editTextBaslik"
             android:hint="Etkinlik Başlığı"
+            android:textColorHint="#6A6A6A"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/editTextAciklama"
             android:hint="Etkinlik Açıklaması"
+            android:textColorHint="#6A6A6A"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/btnEtkinlikKaydet"
             android:text="Kaydet"
+            android:textColorHint="#6A6A6A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
