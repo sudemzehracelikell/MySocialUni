@@ -57,17 +57,19 @@
                 android:orientation="vertical"
                 >
 
-
                 <CalendarView
                     android:id="@+id/calendarView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusedMonthDateColor="#FFFFFFFF"
-                    android:unfocusedMonthDateColor="@android:style/TextAppearance.Small"
-                    android:dateTextAppearance="@android:style/TextAppearance.Small"
-                    android:weekDayTextAppearance="@android:style/TextAppearance.Small"
-                    android:weekSeparatorLineColor="@android:style/TextAppearance.Small"
-                    android:selectedWeekBackgroundColor="@android:style/TextAppearance.Small" />
+                    android:focusedMonthDateColor="@android:color/white"
+                    android:unfocusedMonthDateColor="@android:color/white"
+                    android:weekSeparatorLineColor="@android:color/transparent"
+                    android:selectedWeekBackgroundColor="@android:color/transparent"
+                    android:dateTextAppearance="@style/CalendarTextWhite"
+                    android:weekDayTextAppearance="@style/CalendarTextWhite"
+                    />
+
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewEvents"

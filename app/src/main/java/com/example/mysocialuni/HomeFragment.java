@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +36,13 @@ public class HomeFragment extends Fragment {
     private List<EventModel> eventList;
     private Typeface tf1;
 
+    private AppCompatActivity appCompatActivity;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        appCompatActivity = (AppCompatActivity) getActivity();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,8 +58,7 @@ public class HomeFragment extends Fragment {
         btnBasarılar = view.findViewById(R.id.btnBasarılar);
         btnKulüpler = view.findViewById(R.id.btnKulupler);
 
-
-        tf1 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/yazı_tipi1.ttf");
+        tf1 = Typeface.createFromAsset(appCompatActivity.getAssets(), "fonts/yazı_tipi1.ttf");
         //text yazı tipi degıstırmek
         TextView homeText = view.findViewById(R.id.home_text);
         homeText.setTypeface(tf1);
