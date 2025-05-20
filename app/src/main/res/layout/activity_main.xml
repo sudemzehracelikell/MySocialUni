@@ -29,19 +29,20 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
+            android:id="@+id/homebutton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
 
-            <ImageButton
-                android:id="@+id/homebutton"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
                 android:src="@drawable/baseline_account_balance_24"
-                app:tint="#FFFFFF" />
+                android:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -52,19 +53,20 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/eventbutton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
 
-            <ImageButton
-                android:id="@+id/eventbutton"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
                 android:src="@drawable/calendarbutton"
-                app:tint="#FFFFFF" />
+                android:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -75,19 +77,20 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/projectbutton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true">
 
-            <ImageButton
-                android:id="@+id/projectbutton"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
                 android:src="@drawable/projectsbutton"
-                app:tint="#FFFFFF" />
+                android:tint="#FFFFFF" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -1,6 +1,7 @@
 package com.example.mysocialuni;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,11 +25,14 @@ public class HomeFragment extends Fragment {
     private Button akademikTakvimButton;
     private Button yemekhaneButton;
     private Button btnBasarılar;
+    private Button btnKulüpler;
     private LinearLayout card_event1;
     private FrameLayout btnResimli1;
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
     private List<EventModel> eventList;
+    private Typeface tf1;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,6 +46,18 @@ public class HomeFragment extends Fragment {
         btnResimli1 = view.findViewById(R.id.btnResimli1);
         card_event1 = view.findViewById(R.id.card_event);
         btnBasarılar = view.findViewById(R.id.btnBasarılar);
+        btnKulüpler = view.findViewById(R.id.btnKulupler);
+
+
+        tf1 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/yazı_tipi1.ttf");
+        //text yazı tipi degıstırmek
+        TextView homeText = view.findViewById(R.id.home_text);
+        homeText.setTypeface(tf1);
+
+        btnKulüpler.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ASKulüplerActivity.class);
+            startActivity(intent);
+        });
 
         btnBasarılar.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ASBaşarılarActivity.class);
