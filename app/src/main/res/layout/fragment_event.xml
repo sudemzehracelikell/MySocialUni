@@ -83,11 +83,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/etkinlikekle_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:backgroundTint="#8e413e"
+        android:backgroundTint="@color/button_color"
         android:text="+ Etkinlik Ekle"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

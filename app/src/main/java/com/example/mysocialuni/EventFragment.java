@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -15,12 +16,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import android.content.Intent;
+
+
 public class EventFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
     private List<EventModel> eventList;
     private Typeface tf2;
+
 
     public EventFragment() {
         // Zorunlu boş yapıcı
@@ -40,6 +45,25 @@ public class EventFragment extends Fragment {
         // RecyclerView başlat
         recyclerView = view.findViewById(R.id.recyclerViewEvents);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        Button etkinlikEkleButton = view.findViewById(R.id.etkinlikekle_button);
+        etkinlikEkleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Yeni activity'e geçiş
+                Intent intent = new Intent(getActivity(), AddEventActivity.class);
+                startActivity(intent);
+            }
+        });
+        etkinlikEkleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddEventActivity.class);
+                startActivityForResult(intent, 100); // 100 kodunu kendimiz belirliyoruz
+            }
+        });
+
+
 
         // Örnek veriler
         eventList = new ArrayList<>();
@@ -62,4 +86,22 @@ public class EventFragment extends Fragment {
 
         return view;
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 100 && resultCode == getActivity().RESULT_OK) {
+            String gun = data.getStringExtra("gun");
+            String ay = data.getStringExtra("ay");
+            String baslik = data.getStringExtra("baslik");
+            String aciklama = data.getStringExtra("aciklama");
+
+            // Yeni etkinliği listeye ekle
+            EventModel yeniEtkinlik = new EventModel(gun, ay, baslik, aciklama);
+            eventList.add(yeniEtkinlik);
+            Collections.sort(eventList); // tarih sıralaması için
+            eventAdapter.notifyDataSetChanged();
+        }
+    }
+
 }
