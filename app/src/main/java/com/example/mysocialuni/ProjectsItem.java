@@ -5,12 +5,14 @@ public class ProjectsItem {
     private String desc;
     private int image;
     private String[] projectMembers;
+    private int[] projectPhotos;
 
-    public ProjectsItem(String title, String desc, int image, String[] projectMembers) {
+    public ProjectsItem(String title, String desc, int image, String[] projectMembers, int[] projectPhotos) {
         this.title = title;
         this.desc = desc;
         this.image = image;
         this.projectMembers = projectMembers;
+        this.projectPhotos = projectPhotos;
     }
 
     public String getTitle() {
@@ -43,5 +45,13 @@ public class ProjectsItem {
 
     public void setProjectMembers(String[] projectMembers) {
         this.projectMembers = projectMembers;
+    }
+
+    public int[] getProjectPhotos() {
+        return projectPhotos;
+    }
+
+    public void setProjectPhotos(int[] projectPhotos) {
+        this.projectPhotos = projectPhotos;
     }
 }
