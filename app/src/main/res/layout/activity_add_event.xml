@@ -7,27 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".AddEventActivity"
     android:background="#131313">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:orientation="vertical"
         android:padding="24dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/textView"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Etkinlik Ekle" />
+
         <Spinner
             android:id="@+id/spinnerGun"
             android:backgroundTint="@color/white"
-            android:popupBackground="@color/white"
+            android:popupBackground="#131313"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp" />
 
         <Spinner
             android:id="@+id/spinnerAy"
-            android:backgroundTint="@color/white"
-            android:popupBackground="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/white"
+            android:popupBackground="#131313" />
 
 
         <EditText
@@ -46,14 +56,37 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"/>
 
-        <Button
-            android:id="@+id/btnEtkinlikKaydet"
-            android:text="Kaydet"
-            android:textColorHint="#6A6A6A"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:textColor="@color/black"/>
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnVazgec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="24dp"
+
+                android:layout_marginRight="20dp"
+                android:backgroundTint="@color/button_color"
+                android:text="Vazgeç"
+                android:textColor="@color/white"
+                android:textColorHint="@color/button_color" />
+
+            <Button
+                android:id="@+id/btnEtkinlikKaydet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="@color/button_color"
+                android:text="Kaydet ve Oluştur"
+                android:textColor="@color/white"
+                android:textColorHint="@color/button_color" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
