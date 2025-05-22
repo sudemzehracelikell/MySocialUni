@@ -59,9 +59,14 @@ public class ProfileMenuActivity extends AppCompatActivity {
             text.setText(item.text);
 
             itemView.setOnClickListener(v -> {
-                if (item.text.equals("Profilini Düzenle")) {
+                if (item.text.equals("Proje İstekleri")) {
+                    startActivity(new Intent(ProfileMenuActivity.this, ProjectRequestsActivity.class));
+                }
+
+                else if (item.text.equals("Profilini Düzenle")) {
                     Intent intent = new Intent(this, EditProfileActivity.class);
                     startActivityForResult(intent, EDIT_PROFILE_REQUEST);
+
                 } else if (item.text.equals("Çıkış Yap")) {
                     finish();
                 }
