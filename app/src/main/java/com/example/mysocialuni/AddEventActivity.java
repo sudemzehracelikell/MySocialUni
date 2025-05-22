@@ -55,7 +55,7 @@ public class AddEventActivity extends AppCompatActivity {
         List<String> ayListesi = Arrays.asList("Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
                 "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık");
 
-        // Kulüp listesi
+        // Kulüp listesi icin
         List<String> kulupListesi = Arrays.asList("IEEE", "Müzik", "Dans", "Tiyatro", "Sinema",
                 "Yazılım", "Robotik", "Girişimcilik", "Edebiyat", "Spor");
 
