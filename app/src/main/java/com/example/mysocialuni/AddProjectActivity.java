@@ -53,6 +53,8 @@ public class AddProjectActivity extends AppCompatActivity {
             return insets;
         });
 
+        init();
+
         goback.setOnClickListener(v -> finish());
     }
 }

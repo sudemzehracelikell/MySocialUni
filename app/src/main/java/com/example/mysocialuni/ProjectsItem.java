@@ -1,6 +1,8 @@
 package com.example.mysocialuni;
 
-public class ProjectsItem {
+import java.io.Serializable;
+
+public class ProjectsItem implements Serializable {
     private String title;
     private String desc;
     private int image;
