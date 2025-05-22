@@ -1,5 +1,7 @@
 package com.example.mysocialuni;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,17 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         holder.tvMonth.setText(event.getMonthName());
         holder.tvTitle.setText(event.title);
         holder.tvClubAndTime.setText(event.clubAndTime);
+
+        // Tıklama ile detay sayfasına git
+        holder.itemView.setOnClickListener(v -> {
+            Context context = v.getContext();
+            Intent intent = new Intent(context, EventDetailActivity.class);
+            intent.putExtra("gun", String.valueOf(event.day));
+            intent.putExtra("ay", event.getMonthName());
+            intent.putExtra("baslik", event.title);
+            intent.putExtra("aciklama", event.clubAndTime);
+            context.startActivity(intent);
+        });
     }
 
     @Override

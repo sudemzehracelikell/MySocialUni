@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ShowProjectActivity">
+
+    <ImageView
+        android:id="@+id/imageView_projectPhotoInShow"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/background_removed"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton_goBackInShow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="25dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_projectPhotoInShow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_goback" />
+
+    <TextView
+        android:id="@+id/textView_projectTitleInShow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Kelime ve Oyunlr"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_projectPhotoInShow" />
+
+    <Button
+        android:id="@+id/button_addProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/button_color"
+        android:text="Katılma İsteği Yolla"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/textView_projectTitleInShow"
+        app:layout_constraintTop_toBottomOf="@+id/textView_projectTitleInShow" />
+
+    <TextView
+        android:id="@+id/textView_finalOzet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Özet"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@+id/button_addProject"
+        app:layout_constraintTop_toBottomOf="@+id/button_addProject" />
+
+    <TextView
+        android:id="@+id/textView_projectDescriptionInShow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:text="TextView"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_finalOzet"
+        app:layout_constraintTop_toBottomOf="@+id/textView_finalOzet" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
