@@ -1,13 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#131313">
 
     <Button
-        android:id="@+id/geri_don_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ana Sayfaya Dön"
-        android:layout_centerInParent="true" />
-</RelativeLayout>
+        android:id="@+id/geri_don_button2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:background="?attr/homeAsUpIndicator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sayfa_baslik"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center"
+        android:text="Kulüpler"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/geri_don_button2"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:id="@+id/kart_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/sayfa_baslik"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mesleki_kulupler_baslik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mesleki Kulüpleri"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:paddingBottom="12dp"/>
+
+            <LinearLayout
+                android:id="@+id/linear_kartlar_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/sosyal_kulupler_baslik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sosyal Kulüpleri"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:paddingBottom="12dp"/>
+
+            <LinearLayout
+                android:id="@+id/linear_kartlar_container2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/spor_kulupler_baslik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spor Kulüpleri"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:paddingBottom="12dp"/>
+
+            <LinearLayout
+                android:id="@+id/linear_kartlar_container3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
