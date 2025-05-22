@@ -1,23 +1,21 @@
 package com.example.mysocialuni;
-
+import java.io.IOException;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
-
+import android.view.View;
+import android.widget.*;
+import java.io.File;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.FileProvider;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -46,21 +44,28 @@ public class EditProfileActivity extends AppCompatActivity {
         buttonAddCV = findViewById(R.id.buttonAddCV);
         buttonSave = findViewById(R.id.buttonSave);
 
-        // Load previous data
-        Intent intent = getIntent();
-        if (intent != null) {
-            editTextName.setText(intent.getStringExtra("name"));
-            editTextEmail.setText(intent.getStringExtra("email"));
-            editTextDepartment.setText(intent.getStringExtra("department"));
-            editTextClass.setText(intent.getStringExtra("class"));
+
+        SharedPreferences prefs = getSharedPreferences("userProfile", MODE_PRIVATE);
+        String name = prefs.getString("name", "");
+        String email = prefs.getString("email", "");
+        String department = prefs.getString("department", "");
+        String classYear = prefs.getString("class", "");
+        String imageUri = prefs.getString("profileImage", "");
+
+        editTextName.setText(name);
+        editTextEmail.setText(email);
+        editTextDepartment.setText(department);
+        editTextClass.setText(classYear);
+
+        if (!imageUri.isEmpty()) {
+            selectedImageUri = Uri.parse(imageUri);
+            imageViewProfileEdit.setImageURI(selectedImageUri);
         }
 
         imageViewProfileEdit.setOnClickListener(v -> {
-            android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(EditProfileActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Fotoğraf Seç");
-
-            String[] options = {"Galeriden Seç", "Kamera ile Çek"};
-            builder.setItems(options, (dialog, which) -> {
+            builder.setItems(new String[]{"Galeriden Seç", "Kamera ile Çek"}, (dialog, which) -> {
                 if (which == 0) {
                     Intent galleryIntent = new Intent(Intent.ACTION_PICK);
                     galleryIntent.setType("image/*");
@@ -69,7 +74,6 @@ public class EditProfileActivity extends AppCompatActivity {
                     dispatchTakePictureIntent();
                 }
             });
-
             builder.show();
         });
 
@@ -80,29 +84,32 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
         buttonSave.setOnClickListener(v -> {
-            String name = editTextName.getText().toString();
-            String email = editTextEmail.getText().toString();
-            String department = editTextDepartment.getText().toString();
-            String className = editTextClass.getText().toString();
+            String newName = editTextName.getText().toString();
+            String newEmail = editTextEmail.getText().toString();
+            String newDepartment = editTextDepartment.getText().toString();
+            String newClass = editTextClass.getText().toString();
 
-            Intent resultIntent = new Intent();
-            resultIntent.putExtra("name", name);
-            resultIntent.putExtra("email", email);
-            resultIntent.putExtra("department", department);
-            resultIntent.putExtra("class", className);
-
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("name", newName);
+            editor.putString("email", newEmail);
+            editor.putString("department", newDepartment);
+            editor.putString("class", newClass);
             if (selectedImageUri != null) {
-                resultIntent.putExtra("profileImage", selectedImageUri.toString());
+                editor.putString("profileImage", selectedImageUri.toString());
             }
+            editor.apply();
 
-            if (selectedCVUri != null) {
-                resultIntent.putExtra("cvUri", selectedCVUri.toString());
-            }
+            Toast.makeText(this, "Profil güncellendi!", Toast.LENGTH_SHORT).show();
 
-            Toast.makeText(EditProfileActivity.this, "Profil başarıyla güncellendi!", Toast.LENGTH_SHORT).show();
-            setResult(RESULT_OK, resultIntent);
+            setResult(RESULT_OK); // Inform ProfileMenuActivity
             finish();
         });
+
+
+        findViewById(R.id.iconEditName).setOnClickListener(v -> editTextName.requestFocus());
+        findViewById(R.id.iconEditEmail).setOnClickListener(v -> editTextEmail.requestFocus());
+        findViewById(R.id.iconEditDepartment).setOnClickListener(v -> editTextDepartment.requestFocus());
+        findViewById(R.id.iconEditClass).setOnClickListener(v -> editTextClass.requestFocus());
     }
 
     private void dispatchTakePictureIntent() {
@@ -112,12 +119,10 @@ public class EditProfileActivity extends AppCompatActivity {
             try {
                 photoFile = createImageFile();
             } catch (IOException ex) {
-                Toast.makeText(this, "Fotoğraf oluşturulamadı!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Hata oluştu!", Toast.LENGTH_SHORT).show();
             }
             if (photoFile != null) {
-                Uri photoURI = FileProvider.getUriForFile(this,
-                        getPackageName() + ".provider",
-                        photoFile);
+                Uri photoURI = FileProvider.getUriForFile(this, getPackageName() + ".provider", photoFile);
                 selectedImageUri = photoURI;
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, REQUEST_CAPTURE_IMAGE);
@@ -125,22 +130,15 @@ public class EditProfileActivity extends AppCompatActivity {
         }
     }
 
-
     private File createImageFile() throws IOException {
-        // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM + "/Camera");
-        File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
-
-        // Save a file: path for use with ACTION_VIEW intents
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(imageFileName, ".jpg", storageDir);
         currentPhotoPath = image.getAbsolutePath();
         return image;
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -150,19 +148,17 @@ public class EditProfileActivity extends AppCompatActivity {
             if (requestCode == REQUEST_PICK_IMAGE && data != null) {
                 selectedImageUri = data.getData();
                 imageViewProfileEdit.setImageURI(selectedImageUri);
-            }
-                else if (requestCode == REQUEST_CAPTURE_IMAGE) {
-                    if (selectedImageUri != null) {
-                        imageViewProfileEdit.setImageURI(selectedImageUri);
+            } else if (requestCode == REQUEST_CAPTURE_IMAGE) {
+                if (selectedImageUri != null) {
+                    imageViewProfileEdit.setImageURI(selectedImageUri);
 
-                        // Refresh Gallery AFTER the photo is taken ✅
-                        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                        mediaScanIntent.setData(selectedImageUri);
-                        sendBroadcast(mediaScanIntent);
-                    }
+                    Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+                    mediaScanIntent.setData(selectedImageUri);
+                    sendBroadcast(mediaScanIntent);
                 }
 
-                imageViewProfileEdit.setImageURI(selectedImageUri);
+
+        }
             } else if (requestCode == REQUEST_PICK_CV && data != null) {
                 selectedCVUri = data.getData();
                 Toast.makeText(this, "CV seçildi!", Toast.LENGTH_SHORT).show();
