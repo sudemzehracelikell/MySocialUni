@@ -43,7 +43,7 @@ public class ProfileActivity extends AppCompatActivity {
             intent.putExtra("class", textViewClass.getText().toString());
             startActivityForResult(intent, REQUEST_EDIT_PROFILE);
         });
-
+//asadjgh
         // CV click to open file
         textViewCV.setOnClickListener(v -> {
             if (selectedCVUri != null) {
