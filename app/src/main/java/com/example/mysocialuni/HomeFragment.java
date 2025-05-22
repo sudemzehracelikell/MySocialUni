@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -29,7 +30,6 @@ public class HomeFragment extends Fragment {
     private Button yemekhaneButton;
     private Button btnBasarılar;
     private Button btnKulüpler;
-    private LinearLayout card_event1;
     private FrameLayout btnResimli1;
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
@@ -54,7 +54,6 @@ public class HomeFragment extends Fragment {
         akademikTakvimButton = view.findViewById(R.id.btnAkademikTakvim);
         yemekhaneButton = view.findViewById(R.id.btnYemekhane);
         btnResimli1 = view.findViewById(R.id.btnResimli1);
-        card_event1 = view.findViewById(R.id.card_event);
         btnBasarılar = view.findViewById(R.id.btnBasarılar);
         btnKulüpler = view.findViewById(R.id.btnKulupler);
 
@@ -73,10 +72,6 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
-        card_event1.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ASEtkinlikKarti1Activity.class);
-            startActivity(intent);
-        });
 
         etkinliklerButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ASEtkinliklerActivity.class);
@@ -110,6 +105,9 @@ public class HomeFragment extends Fragment {
         eventList.add(new eventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
         eventList.add(new eventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
         eventList.add(new eventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new eventModel("3","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+
+        Collections.sort(eventList); // tarih sıralaması için
 
         eventAdapter = new EventAdapter(eventList);
         recyclerView.setAdapter(eventAdapter);

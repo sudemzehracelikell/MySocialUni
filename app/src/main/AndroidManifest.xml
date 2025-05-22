@@ -21,6 +21,9 @@
         android:theme="@style/Theme.MySocilUni"
         tools:targetApi="31">
         <activity
+            android:name=".ShowProjectActivity"
+            android:exported="false" />
+        <activity
             android:name=".EventDetailActivity"
             android:exported="false" />
         <activity
@@ -47,7 +50,6 @@
         <activity android:name=".ASYemekhaneActivity" />
         <activity android:name=".ASAkademikTakvimActivity" />
         <activity android:name=".ASBoşSayfaActivity" />
-        <activity android:name=".ASEtkinlikKarti1Activity" />
         <activity android:name=".ASBaşarılarActivity" />
         <activity android:name=".ASKulüplerActivity" />
         <activity
