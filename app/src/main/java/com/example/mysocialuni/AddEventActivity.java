@@ -87,6 +87,6 @@ public class AddEventActivity extends AppCompatActivity {
             public void onClick(View view) {
                 finish();
             }
-        });
+            });
     }
 }
