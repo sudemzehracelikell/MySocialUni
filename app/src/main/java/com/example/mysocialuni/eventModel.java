@@ -7,13 +7,21 @@ public class eventModel implements Comparable<eventModel> {
     public int day;
     public int month;
     public String title;
-    public String clubAndTime;
+    public String description;
+    public String clubName;
+    public String startTime;
+    public String endTime;
+    public int imageResId;
 
-    public eventModel(String day, String month, String title, String clubAndTime) {
+    public eventModel(String day, String month, String title, String description, String clubName, String startTime, String endTime, int imageResId) {
         this.day = Integer.parseInt(day);
         this.month = convertMonthToNumber(month);
         this.title = title;
-        this.clubAndTime = clubAndTime;
+        this.description = description;
+        this.clubName = clubName;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.imageResId = imageResId;
     }
 
     private int convertMonthToNumber(String monthName) {
@@ -31,7 +39,16 @@ public class eventModel implements Comparable<eventModel> {
         monthMap.put("Kasım", 11);
         monthMap.put("Aralık", 12);
 
-        return monthMap.getOrDefault(monthName, 0); // Geçersiz ay ismi durumunda 0 döner
+        return monthMap.getOrDefault(monthName, 0);
+    }
+
+    public String getMonthName() {
+        String[] monthNames = {"", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"};
+        return (month >= 1 && month <= 12) ? monthNames[month] : "";
+    }
+
+    public String getClubAndTime() {
+        return clubName + " | " + startTime + " - " + endTime;
     }
 
     @Override
@@ -41,10 +58,5 @@ public class eventModel implements Comparable<eventModel> {
         } else {
             return Integer.compare(this.day, other.day);
         }
-    }
-
-    public String getMonthName() {
-        String[] monthNames = {"", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"};
-        return (month >= 1 && month <= 12) ? monthNames[month] : "";
     }
 }

@@ -1,37 +1,59 @@
 package com.example.mysocialuni;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EventDetailActivity extends AppCompatActivity {
 
-
+    private TextView tvBaslik, tvGun, tvAy, tvAciklama, tvKulup, tvSaat;
+    private ImageView ivEtkinlikResmi;
+    private Button btnVazgec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
 
-        Button btnVazgec = findViewById(R.id.btnVazgec);
-        TextView textGun = findViewById(R.id.textDetayGun);
-        TextView textAy = findViewById(R.id.textDetayAy);
-        TextView textBaslik = findViewById(R.id.textDetayBaslik);
-        TextView textAciklama = findViewById(R.id.textDetayAciklama);
+        // View'ları bağla
+        tvBaslik = findViewById(R.id.tvBaslik);
+        tvGun = findViewById(R.id.tvGun);
+        tvAy = findViewById(R.id.tvAy);
+        tvAciklama = findViewById(R.id.tvAciklama);
+        tvKulup = findViewById(R.id.tvKulup);
+        tvSaat = findViewById(R.id.tvSaat);
+        ivEtkinlikResmi = findViewById(R.id.ivEtkinlikResmi);
+        btnVazgec = findViewById(R.id.btnVazgec);
 
-        btnVazgec.setOnClickListener(v -> finish());
-
-        // Intent ile gelen verileri al
+        // Intent ile gelen veriler
+        String baslik = getIntent().getStringExtra("baslik");
         String gun = getIntent().getStringExtra("gun");
         String ay = getIntent().getStringExtra("ay");
-        String baslik = getIntent().getStringExtra("baslik");
         String aciklama = getIntent().getStringExtra("aciklama");
+        String kulup = getIntent().getStringExtra("kulup");
+        String saatBaslangic = getIntent().getStringExtra("saatBaslangic");
+        String saatBitis = getIntent().getStringExtra("saatBitis");
+        int resimId = getIntent().getIntExtra("resimId", R.drawable.as_etkinliklerkart_background);
 
-        // Ekrana yazdır
-        textGun.setText(gun);
-        textAy.setText(ay);
-        textBaslik.setText(baslik);
-        textAciklama.setText(aciklama);
+        // View'lara verileri yaz
+        tvBaslik.setText(baslik);
+        tvGun.setText("Gün: " + gun);
+        tvAy.setText("Ay: " + ay);
+        tvAciklama.setText(aciklama);
+        tvKulup.setText("Kulüp: " + kulup);
+        tvSaat.setText("Saat: " + saatBaslangic + " - " + saatBitis);
+        ivEtkinlikResmi.setImageResource(resimId);
+
+        // Vazgeç butonu işlevi
+        btnVazgec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish(); // Aktiviteyi kapatır
+            }
+        });
     }
 }

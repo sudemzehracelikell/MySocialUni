@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,16 +34,21 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         holder.tvDay.setText(String.valueOf(event.day));
         holder.tvMonth.setText(event.getMonthName());
         holder.tvTitle.setText(event.title);
-        holder.tvClubAndTime.setText(event.clubAndTime);
+        holder.tvClubAndTime.setText(event.getClubAndTime());
+        //holder.ivEvent.setImageResource(event.imageResId);
 
-        // Tıklama ile detay sayfasına git
+        // Detay sayfasına geçiş
         holder.itemView.setOnClickListener(v -> {
             Context context = v.getContext();
             Intent intent = new Intent(context, EventDetailActivity.class);
             intent.putExtra("gun", String.valueOf(event.day));
             intent.putExtra("ay", event.getMonthName());
             intent.putExtra("baslik", event.title);
-            intent.putExtra("aciklama", event.clubAndTime);
+            intent.putExtra("aciklama", event.description);
+            intent.putExtra("kulup", event.clubName);
+            intent.putExtra("saatBaslangic", event.startTime);
+            intent.putExtra("saatBitis", event.endTime);
+            intent.putExtra("resimId", event.imageResId);
             context.startActivity(intent);
         });
     }
@@ -54,6 +60,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         TextView tvDay, tvMonth, tvTitle, tvClubAndTime;
+        //ImageView ivEvent;
 
         public EventViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +68,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             tvMonth = itemView.findViewById(R.id.tv_month);
             tvTitle = itemView.findViewById(R.id.tv_title);
             tvClubAndTime = itemView.findViewById(R.id.tv_club_and_time);
+            //ivEvent = itemView.findViewById(R.id.iv_event); // XML içinde bu ID'ye sahip olmalı
         }
     }
 }
