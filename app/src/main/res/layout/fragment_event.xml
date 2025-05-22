@@ -23,14 +23,13 @@
 
             <!-- Ana Sayfa Yazısı -->
             <TextView
-                android:id="@+id/home_text"
+                android:id="@+id/event_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="8dp"
-                android:fontFamily="sans-serif-medium"
                 android:text="Etkinlikler"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
@@ -58,17 +57,19 @@
                 android:orientation="vertical"
                 >
 
-
                 <CalendarView
                     android:id="@+id/calendarView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:focusedMonthDateColor="#FFFFFFFF"
-                    android:unfocusedMonthDateColor="@android:style/TextAppearance.Small"
-                    android:dateTextAppearance="@android:style/TextAppearance.Small"
-                    android:weekDayTextAppearance="@android:style/TextAppearance.Small"
-                    android:weekSeparatorLineColor="@android:style/TextAppearance.Small"
-                    android:selectedWeekBackgroundColor="@android:style/TextAppearance.Small" />
+                    android:focusedMonthDateColor="@android:color/white"
+                    android:unfocusedMonthDateColor="@android:color/white"
+                    android:weekSeparatorLineColor="@android:color/transparent"
+                    android:selectedWeekBackgroundColor="@android:color/transparent"
+                    android:dateTextAppearance="@style/CalendarTextWhite"
+                    android:weekDayTextAppearance="@style/CalendarTextWhite"
+                    />
+
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerViewEvents"
@@ -82,11 +83,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/etkinlikekle_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:backgroundTint="#8e413e"
+        android:backgroundTint="@color/button_color"
         android:text="+ Etkinlik Ekle"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

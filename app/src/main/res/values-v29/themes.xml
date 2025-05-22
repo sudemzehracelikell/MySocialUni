@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Theme.MySocilUni" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Buton rengi -->
+        <item name="colorPrimary">@color/white</item>
+
+        <!-- Uygulama tam ekran -->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- Karanlık modun etkisini tamamen devre dışı bırak -->
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+</resources>

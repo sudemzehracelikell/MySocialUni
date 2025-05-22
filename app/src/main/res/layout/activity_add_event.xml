@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEventActivity"
+    android:background="#131313">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:text="Etkinlik Ekle"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textViewbaslik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Etkinlik Başlığı"
+                android:textColor="#6A6A6A"/>
+            <EditText
+                android:id="@+id/editTextBaslik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/white"
+                android:textColorHint="#6A6A6A"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/textViewresim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resim"
+                android:textColor="#6A6A6A"/>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:outlineSpotShadowColor="@color/white"/>
+
+            <Button
+                android:id="@+id/btnResimSec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/button_color"
+                android:text="Etkinlik Resmi Seç"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gün"
+                android:textColor="#6A6A6A"/>
+
+            <Spinner
+                android:id="@+id/spinnerGun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="#131313" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ay"
+                android:textColor="#6A6A6A"/>
+
+            <Spinner
+                android:id="@+id/spinnerAy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/white"
+                android:popupBackground="#131313"
+                />
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kulüp"
+                android:textColor="#6A6A6A"/>
+
+            <Spinner
+                android:id="@+id/spinnerKulup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:popupBackground="#131313"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Başlangıç Saati"
+                android:textColor="#6A6A6A"/>
+
+            <Spinner
+                android:id="@+id/spinnerBaslangicSaat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:popupBackground="#131313"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bitiş Saati"
+                android:textColor="#6A6A6A"/>
+
+            <Spinner
+                android:id="@+id/spinnerBitisSaat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:popupBackground="#131313"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Etkinlik Detayları"
+                android:textColor="#6A6A6A"/>
+            <EditText
+                android:id="@+id/editTextAciklama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="#6A6A6A"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnVazgec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="20dp"
+
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button_color"
+                    android:text="Vazgeç"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/button_color" />
+
+                <Button
+                    android:id="@+id/btnEtkinlikKaydet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/button_color"
+                    android:text="Kaydet ve Oluştur"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/button_color" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

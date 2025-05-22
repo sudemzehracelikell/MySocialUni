@@ -1,19 +1,25 @@
 package com.example.mysocialuni;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -23,11 +29,20 @@ public class HomeFragment extends Fragment {
     private Button akademikTakvimButton;
     private Button yemekhaneButton;
     private Button btnBasarılar;
-    private LinearLayout card_event1;
+    private Button btnKulüpler;
     private FrameLayout btnResimli1;
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
-    private List<EventModel> eventList;
+    private List<eventModel> eventList;
+    private Typeface tf1;
+
+    private AppCompatActivity appCompatActivity;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        appCompatActivity = (AppCompatActivity) getActivity();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,18 +54,24 @@ public class HomeFragment extends Fragment {
         akademikTakvimButton = view.findViewById(R.id.btnAkademikTakvim);
         yemekhaneButton = view.findViewById(R.id.btnYemekhane);
         btnResimli1 = view.findViewById(R.id.btnResimli1);
-        card_event1 = view.findViewById(R.id.card_event);
         btnBasarılar = view.findViewById(R.id.btnBasarılar);
+        btnKulüpler = view.findViewById(R.id.btnKulupler);
+
+        tf1 = Typeface.createFromAsset(appCompatActivity.getAssets(), "fonts/yazı_tipi1.ttf");
+        //text yazı tipi degıstırmek
+        TextView homeText = view.findViewById(R.id.home_text);
+        homeText.setTypeface(tf1);
+
+        btnKulüpler.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ASKulüplerActivity.class);
+            startActivity(intent);
+        });
 
         btnBasarılar.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ASBaşarılarActivity.class);
             startActivity(intent);
         });
 
-        card_event1.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ASEtkinlikKarti1Activity.class);
-            startActivity(intent);
-        });
 
         etkinliklerButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ASEtkinliklerActivity.class);
@@ -58,7 +79,7 @@ public class HomeFragment extends Fragment {
         });
 
         profilButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ASProfilActivity.class);
+            Intent intent = new Intent(getActivity(), ProfileActivity.class);
             startActivity(intent);
         });
 
@@ -81,9 +102,12 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         eventList = new ArrayList<>();
-        eventList.add(new EventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
-        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
-        eventList.add(new EventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new eventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new eventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new eventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new eventModel("3","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+
+        Collections.sort(eventList); // tarih sıralaması için
 
         eventAdapter = new EventAdapter(eventList);
         recyclerView.setAdapter(eventAdapter);
