@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#131313"
+    android:paddingTop="45dp">
 
-    <Button
-        android:id="@+id/geri_don_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ana Sayfaya Dön"
-        android:layout_centerInParent="true" />
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/geri_don_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:background="?attr/homeAsUpIndicator" />
+
+        <TextView
+            android:id="@+id/sayfa_baslik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Yemekhane"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:padding="8dp" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/yemek_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        />
+</LinearLayout>

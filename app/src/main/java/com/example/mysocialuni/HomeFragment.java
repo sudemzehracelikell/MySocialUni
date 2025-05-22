@@ -25,10 +25,8 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private Button profilButton;
-    private Button etkinliklerButton;
     private Button akademikTakvimButton;
     private Button yemekhaneButton;
-    private Button btnBasarılar;
     private Button btnKulüpler;
     private FrameLayout btnResimli1;
     private RecyclerView recyclerView;
@@ -50,11 +48,9 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         profilButton = view.findViewById(R.id.profil_button);
-        etkinliklerButton = view.findViewById(R.id.btnEtkinlikler);
         akademikTakvimButton = view.findViewById(R.id.btnAkademikTakvim);
         yemekhaneButton = view.findViewById(R.id.btnYemekhane);
         btnResimli1 = view.findViewById(R.id.btnResimli1);
-        btnBasarılar = view.findViewById(R.id.btnBasarılar);
         btnKulüpler = view.findViewById(R.id.btnKulupler);
 
         tf1 = Typeface.createFromAsset(appCompatActivity.getAssets(), "fonts/yazı_tipi1.ttf");
@@ -67,16 +63,6 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
-        btnBasarılar.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ASBaşarılarActivity.class);
-            startActivity(intent);
-        });
-
-
-        etkinliklerButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ASEtkinliklerActivity.class);
-            startActivity(intent);
-        });
 
         profilButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ProfileActivity.class);

@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    
+    <!-- Permissions (must be outside <application>) -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-    <uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32" />
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -28,29 +20,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySocilUni"
         tools:targetApi="31">
-
-        <activity android:name=".ProjectRequestsActivity" android:exported="false" />
-        <activity android:name=".ShowProjectActivity" android:exported="false" />
-        <activity android:name=".EventDetailActivity" android:exported="false" />
-        <activity android:name=".AddEventActivity" android:exported="false" />
-        <activity android:name=".AddProjectActivity" android:exported="false" />
-        <activity android:name=".EditProfileActivity" android:exported="false" />
-        <activity android:name=".ProfileMenuActivity" android:exported="true">
-        </activity>
-        <activity android:name=".ProfileActivity" android:exported="true" />
-        <activity android:name=".RequestDetailActivity" />
-        <activity android:name=".ASEtkinliklerActivity" />
-        <activity android:name=".ASYemekhaneActivity" />
-        <activity android:name=".ASAkademikTakvimActivity" />
-        <activity android:name=".ASBoşSayfaActivity" />
-        <activity android:name=".ASBaşarılarActivity" />
-        <activity android:name=".ASKulüplerActivity" />
-        <activity android:name=".MainActivity" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".ShowProjectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddEventActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddProjectActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -60,8 +41,26 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-        </provider>
+        </provider> <!-- Your Activities -->
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ASEtkinliklerActivity" />
+        <activity android:name=".ASYemekhaneActivity" />
+        <activity android:name=".ASAkademikTakvimActivity" />
+        <activity android:name=".ASBoşSayfaActivity" />
+        <activity android:name=".ASBaşarılarActivity" />
+        <activity android:name=".ASKulüplerActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
