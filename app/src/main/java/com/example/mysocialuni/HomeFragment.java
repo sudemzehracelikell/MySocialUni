@@ -33,7 +33,7 @@ public class HomeFragment extends Fragment {
     private FrameLayout btnResimli1;
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
-    private List<EventModel> eventList;
+    private List<eventModel> eventList;
     private Typeface tf1;
 
     private AppCompatActivity appCompatActivity;
@@ -107,9 +107,9 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         eventList = new ArrayList<>();
-        eventList.add(new EventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
-        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
-        eventList.add(new EventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new eventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new eventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new eventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
 
         eventAdapter = new EventAdapter(eventList);
         recyclerView.setAdapter(eventAdapter);

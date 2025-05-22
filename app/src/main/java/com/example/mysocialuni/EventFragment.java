@@ -23,7 +23,7 @@ public class EventFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
-    private List<EventModel> eventList;
+    private List<eventModel> eventList;
     private Typeface tf2;
 
 
@@ -67,15 +67,15 @@ public class EventFragment extends Fragment {
 
         // Örnek veriler
         eventList = new ArrayList<>();
-        eventList.add(new EventModel("18", "Mart", "Finans ve Stratejide Liderlik", "Endüstri Mühendisliği kulübü   14.00 - 15.00"));
-        eventList.add(new EventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
-        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
-        eventList.add(new EventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
-        eventList.add(new EventModel("23","Haziran","İstech - 2025","IEEE İSTUN   16.00 - 17.00"));
-        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
-        eventList.add(new EventModel("3", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
-        eventList.add(new EventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
-        eventList.add(new EventModel("9", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new eventModel("18", "Mart", "Finans ve Stratejide Liderlik", "Endüstri Mühendisliği kulübü   14.00 - 15.00"));
+        eventList.add(new eventModel("22", "Mart", "Yapay Zeka ve Geleceği", "IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new eventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new eventModel("23","Haziran","İstech 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new eventModel("23","Haziran","İstech - 2025","IEEE İSTUN   16.00 - 17.00"));
+        eventList.add(new eventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new eventModel("3", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new eventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
+        eventList.add(new eventModel("9", "Nisan", "Kariyer Sohbetleri", "Girişimcilik Kulübü   13.00 - 14.30"));
         // Daha fazlasını ekleyebilirsin
 
         Collections.sort(eventList);
@@ -97,7 +97,7 @@ public class EventFragment extends Fragment {
             String aciklama = data.getStringExtra("aciklama");
 
             // Yeni etkinliği listeye ekle
-            EventModel yeniEtkinlik = new EventModel(gun, ay, baslik, aciklama);
+            eventModel yeniEtkinlik = new eventModel(gun, ay, baslik, aciklama);
             eventList.add(yeniEtkinlik);
             Collections.sort(eventList); // tarih sıralaması için
             eventAdapter.notifyDataSetChanged();

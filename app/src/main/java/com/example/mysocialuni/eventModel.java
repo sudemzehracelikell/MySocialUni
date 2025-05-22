@@ -3,13 +3,13 @@ package com.example.mysocialuni;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EventModel implements Comparable<EventModel> {
+public class eventModel implements Comparable<eventModel> {
     public int day;
     public int month;
     public String title;
     public String clubAndTime;
 
-    public EventModel(String day, String month, String title, String clubAndTime) {
+    public eventModel(String day, String month, String title, String clubAndTime) {
         this.day = Integer.parseInt(day);
         this.month = convertMonthToNumber(month);
         this.title = title;
@@ -35,7 +35,7 @@ public class EventModel implements Comparable<EventModel> {
     }
 
     @Override
-    public int compareTo(EventModel other) {
+    public int compareTo(eventModel other) {
         if (this.month != other.month) {
             return Integer.compare(this.month, other.month);
         } else {

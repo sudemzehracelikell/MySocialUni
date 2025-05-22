@@ -19,36 +19,51 @@ public class AddEventActivity extends AppCompatActivity {
     private Spinner spinnerGun, spinnerAy;
     private EditText editTextBaslik, editTextAciklama;
     private Button btnKaydet;
+    private Button btnVazgec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
 
-        // Spinner ve EditText'leri tanımla
+        // View'ları tanımla
         spinnerGun = findViewById(R.id.spinnerGun);
         spinnerAy = findViewById(R.id.spinnerAy);
         editTextBaslik = findViewById(R.id.editTextBaslik);
         editTextAciklama = findViewById(R.id.editTextAciklama);
         btnKaydet = findViewById(R.id.btnEtkinlikKaydet);
+        btnVazgec = findViewById(R.id.btnVazgec);
 
-        // Gün spinner'ı için 1–31
+
+
+        // Gün listesi (1–31)
         List<String> gunListesi = new ArrayList<>();
         for (int i = 1; i <= 31; i++) {
             gunListesi.add(String.valueOf(i));
         }
-        ArrayAdapter<String> gunAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, gunListesi);
-        gunAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerGun.setAdapter(gunAdapter);
 
-        // Ay spinner'ı için ay isimleri
+        // Ay listesi
         List<String> ayListesi = Arrays.asList("Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
                 "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık");
-        ArrayAdapter<String> ayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ayListesi);
-        ayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Özel adapter kullanımı (beyaz yazı rengi için özel layout)
+        ArrayAdapter<String> gunAdapter = new ArrayAdapter<>(
+                this,
+                R.layout.spinner_item,          // spinner kapalı görünüm
+                gunListesi
+        );
+        gunAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item); // açılır liste görünüm
+        spinnerGun.setAdapter(gunAdapter);
+
+        ArrayAdapter<String> ayAdapter = new ArrayAdapter<>(
+                this,
+                R.layout.spinner_item,
+                ayListesi
+        );
+        ayAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinnerAy.setAdapter(ayAdapter);
 
-        // Kaydet butonu tıklanınca
+        // Kaydet butonu işlemleri
         btnKaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,5 +82,11 @@ public class AddEventActivity extends AppCompatActivity {
                 finish();
             }
         });
+        btnVazgec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+            });
     }
 }
