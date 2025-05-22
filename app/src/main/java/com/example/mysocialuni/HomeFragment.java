@@ -79,7 +79,7 @@ public class HomeFragment extends Fragment {
         });
 
         profilButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ProfileActivity.class);
+            Intent intent = new Intent(getActivity(), ProfileMenuActivity.class);
             startActivity(intent);
         });
 
