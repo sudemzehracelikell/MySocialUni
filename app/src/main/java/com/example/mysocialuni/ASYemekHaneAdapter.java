@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ASYemekAdapter extends RecyclerView.Adapter<ASYemekAdapter.YemekViewHolder> {
+public class ASYemekHaneAdapter extends RecyclerView.Adapter<ASYemekHaneAdapter.YemekViewHolder> {
 
-    private List<ASYemekModel> yemekListesi;
+    private List<ASYemekhaneModel> yemekListesi;
 
-    public ASYemekAdapter(List<ASYemekModel> yemekListesi) {
+    public ASYemekHaneAdapter(List<ASYemekhaneModel> yemekListesi) {
         this.yemekListesi = yemekListesi;
     }
 
@@ -27,7 +27,7 @@ public class ASYemekAdapter extends RecyclerView.Adapter<ASYemekAdapter.YemekVie
 
     @Override
     public void onBindViewHolder(@NonNull YemekViewHolder holder, int position) {
-        ASYemekModel yemek = yemekListesi.get(position);
+        ASYemekhaneModel yemek = yemekListesi.get(position);
 
         holder.gunText.setText(yemek.getGun());
 

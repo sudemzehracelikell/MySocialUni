@@ -22,7 +22,7 @@ public class ASKulüplerAdapter extends RecyclerView.Adapter<ASKulüplerAdapter.
     @NonNull
     @Override
     public KulupViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.as_kuluplerkarti, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.as_kulupler_card, parent, false);
         return new KulupViewHolder(view);
     }
 

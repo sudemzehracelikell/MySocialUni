@@ -93,7 +93,7 @@ public class ASKulüplerActivity extends AppCompatActivity {
 
         for (int i = 0; i < kulupList.size(); i++) {
             ASKulüplerModel kulup = kulupList.get(i);
-            View kartView = inflater.inflate(R.layout.as_kuluplerkarti, null);
+            View kartView = inflater.inflate(R.layout.as_kulupler_card, null);
 
             ImageView resim = kartView.findViewById(R.id.kulup_resmi);
             TextView adi = kartView.findViewById(R.id.kulup_adi);
