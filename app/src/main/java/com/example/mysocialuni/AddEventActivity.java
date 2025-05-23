@@ -56,8 +56,8 @@ public class AddEventActivity extends AppCompatActivity {
                 "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık");
 
         // Kulüp listesi icin
-        List<String> kulupListesi = Arrays.asList("IEEE", "Müzik", "Dans", "Tiyatro", "Sinema",
-                "Yazılım", "Robotik", "Girişimcilik", "Edebiyat", "Spor");
+        List<String> kulupListesi = Arrays.asList("IEEE İstün", "Müzik Kulübü", "Endüstri Mühendisliği Kulübü", "Tiyatro Kulübü", "Kültür Ve Sanat Kulübü",
+                "Psikoloji Kulübü", "İSTUDSA", "Girişimcilik Kulübü", "Outdoor ve Kapmçılık Kulübü", "Etnobotanik Kulübü");
 
         // Saat listesi (30 dakikalık aralıklarla)
         List<String> saatListesi = new ArrayList<>();

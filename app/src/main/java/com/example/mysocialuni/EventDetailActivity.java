@@ -41,11 +41,11 @@ public class EventDetailActivity extends AppCompatActivity {
 
         // View'lara verileri yaz
         tvBaslik.setText(baslik);
-        tvGun.setText("Gün: " + gun);
-        tvAy.setText("Ay: " + ay);
+        tvGun.setText(gun);
+        tvAy.setText(ay);
         tvAciklama.setText(aciklama);
-        tvKulup.setText("Kulüp: " + kulup);
-        tvSaat.setText("Saat: " + saatBaslangic + " - " + saatBitis);
+        tvKulup.setText("Bu etkinlik " + kulup + " tarafından düzenlenmektedir.");
+        tvSaat.setText(saatBaslangic + " | " + saatBitis);
         ivEtkinlikResmi.setImageResource(resimId);
 
         // Vazgeç butonu işlevi
