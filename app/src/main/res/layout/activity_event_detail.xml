@@ -15,8 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Başlık"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:textSize="17sp"
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp" />
@@ -24,7 +23,7 @@
         <ImageView
             android:id="@+id/ivEtkinlikResmi"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             android:src="@drawable/baseline_account_balance_24"
             android:layout_marginBottom="16dp" />
