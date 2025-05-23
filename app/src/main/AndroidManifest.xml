@@ -45,7 +45,9 @@
         <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
+
         <activity android:name=".ProjectRequestsActivity" />
+        <activity android:name=".RequestDetailActivity" />
         <activity android:name=".ASYemekhaneActivity" />
         <activity android:name=".ASAkademikTakvimActivity" />
         <activity android:name=".ASHaberlerActivity" />
