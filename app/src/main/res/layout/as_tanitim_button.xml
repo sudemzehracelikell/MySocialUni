@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#131313">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="45dp"
-        android:paddingBottom="16dp">
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
 
         <Button
             android:id="@+id/geri_don_button"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="16dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:background="?attr/homeAsUpIndicator"
-            android:backgroundTint="#FFFFFF"/>
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginLeft="16dp"
+            tools:layout_editor_absoluteY="5dp" />
 
         <TextView
             android:id="@+id/sayfa_baslik"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="İSTÜN"
+            android:text="İSTÜN'Ü TANI"
             android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -44,50 +48,68 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/banner_gorsel"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/as_tanitim_button1"
-                android:contentDescription="Banner Görsel"
-                android:adjustViewBounds="true" />
+                android:layout_height="match_parent"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/banner_gorsel"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Banner Görsel"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/as_tanitim_button1" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:textColor="#B3B0B0"
+                android:textSize="14sp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="25dp"
                 android:text="İstanbul Sağlık ve Teknoloji Üniversitesi, 2020-2021 eğitim-öğretim yılı itibarıyla eğitime başlamış ve kısa sürede sağlık ve teknoloji alanlarında liderlik yolunda önemli adımlar atmıştır. Kuruluşunun ilk yılında, %100 doluluk oranı elde ederek vakıf üniversiteleri arasında en çok tercih edilen eğitim kurumlarından biri olmayı başarmıştır. Ayrıca, sunduğu burs olanakları ile de Türkiye'nin en çok burs veren üniversiteleri arasında ilk üçe girmeyi başarmıştır. Bu başarı, üniversitenin güçlü vizyonunun ve öğrenci odaklı eğitim anlayışının bir yansımasıdır." />
 
-            <ImageView
-                android:id="@+id/ic_gorsel_1"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginTop="16dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/as_tanitim_button2"
-                android:contentDescription="İç Görsel 1"
-                android:adjustViewBounds="true" />
+                android:layout_height="match_parent"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/ic_gorsel_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="İç Görsel 1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/as_tanitim_button2" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:textColor="#B3B0B0"
+                android:textSize="14sp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="25dp"
                 android:text="Üniversitemiz 18 Mayıs 2018 tarihli, 30425 sayılı Resmi Gazete’de yayımlanan Yükseköğretim Kanunu ile Bazı Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun uyarınca Bilgiç Vakfı önderliğinde kurulmuştur. Kurulduğu günden bu yana uzman akademik kadrodan son teknoloji ile donatılmış derslik ve laboratuvarlara kadar her türlü hazırlığını tamamlamış ve 2020-2021 eğitim öğretim yılında eğitime başlamıştır." />
 
-            <ImageView
-                android:id="@+id/ic_gorsel_2"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginTop="16dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/as_tanitim_button3"
-                android:contentDescription="İç Görsel 2"
-                android:adjustViewBounds="true" />
+                android:layout_height="match_parent"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/ic_gorsel_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="İç Görsel 2"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/as_tanitim_button3" />
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </ScrollView>
