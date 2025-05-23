@@ -26,12 +26,12 @@ public class HomeFragment extends Fragment {
     private Button akademikTakvimButton;
     private Button yemekhaneButton;
     private Button btnKulüpler;
+    private FrameLayout btnResimli2;
     private FrameLayout btnResimli1;
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
     private List<eventModel> eventList;
     private Typeface tf1;
-
     private AppCompatActivity appCompatActivity;
 
     @Override
@@ -50,6 +50,7 @@ public class HomeFragment extends Fragment {
         yemekhaneButton = view.findViewById(R.id.btnYemekhane);
         btnResimli1 = view.findViewById(R.id.btnResimli1);
         btnKulüpler = view.findViewById(R.id.btnKulupler);
+        btnResimli2 = view.findViewById(R.id.btnResimli2);
 
         tf1 = Typeface.createFromAsset(appCompatActivity.getAssets(), "fonts/yazı_tipi1.ttf");
         //text yazı tipi degıstırmek
@@ -61,6 +62,10 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
+        btnResimli2.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ASTanıtımActivity.class);
+            startActivity(intent);
+        });
 
         profilButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ProfileMenuActivity.class);

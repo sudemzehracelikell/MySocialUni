@@ -51,6 +51,7 @@
         <activity android:name=".ASHaberlerActivity" />
         <activity android:name=".ProfileMenuActivity" />
         <activity android:name=".ASKulüplerActivity" />
+        <activity android:name=".ASTanıtımActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
