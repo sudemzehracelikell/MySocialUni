@@ -1,44 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#131313"
-    android:paddingTop="45dp">
+    android:paddingTop="0dp">
 
-    <RelativeLayout
+    <!-- Üst Kısım: Geri Dön Butonu + Başlık -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ust_baslik_alani"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <Button
             android:id="@+id/geri_don_button"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginStart="16dp"
-            android:background="?attr/homeAsUpIndicator" />
+            android:background="?attr/homeAsUpIndicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
             android:id="@+id/sayfa_baslik"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
             android:text="Yemekhane"
             android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:padding="8dp" />
-    </RelativeLayout>
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Yemek Listesi RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/yemek_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipChildren="false"
+        android:clipToPadding="false"
         android:overScrollMode="never"
         android:scrollbars="none"
-        android:clipToPadding="false"
-        android:clipChildren="false"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </LinearLayout>
