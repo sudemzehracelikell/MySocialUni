@@ -15,8 +15,8 @@ import java.util.List;
 public class ASYemekhaneActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private ASYemekAdapter yemekAdapter;
-    private List<ASYemekModel> yemekListesi;
+    private ASYemekHaneAdapter yemekAdapter;
+    private List<ASYemekhaneModel> yemekListesi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +39,13 @@ public class ASYemekhaneActivity extends AppCompatActivity {
         snapHelper.attachToRecyclerView(recyclerView);
 
         yemekListesi = new ArrayList<>();
-        yemekListesi.add(new ASYemekModel("Pazartesi", "Mercimek\nTavuk\nPilav", "Tarhana\nDolma\nAyran"));
-        yemekListesi.add(new ASYemekModel("Salı", "Ezogelin\nKarnıyarık\nPirinç", "Domates\nBulgur\nYoğurt"));
-        yemekListesi.add(new ASYemekModel("Çarşamba", "Yayla\nKöfte\nMakarna", "Mercimek\nTavuk\nPilav"));
-        yemekListesi.add(new ASYemekModel("Perşembe", "Domates\nEtli Patates\nBulgur", "Ezogelin\nKuru Fasulye\nPilav"));
-        yemekListesi.add(new ASYemekModel("Cuma", "Tarhana\nTavuk\nMakarna", "Yayla\nKarnıyarık\nAyran"));
+        yemekListesi.add(new ASYemekhaneModel("Pazartesi", "Mercimek\nTavuk\nPilav", "Tarhana\nDolma\nAyran"));
+        yemekListesi.add(new ASYemekhaneModel("Salı", "Ezogelin\nKarnıyarık\nPirinç", "Domates\nBulgur\nYoğurt"));
+        yemekListesi.add(new ASYemekhaneModel("Çarşamba", "Yayla\nKöfte\nMakarna", "Mercimek\nTavuk\nPilav"));
+        yemekListesi.add(new ASYemekhaneModel("Perşembe", "Domates\nEtli Patates\nBulgur", "Ezogelin\nKuru Fasulye\nPilav"));
+        yemekListesi.add(new ASYemekhaneModel("Cuma", "Tarhana\nTavuk\nMakarna", "Yayla\nKarnıyarık\nAyran"));
 
-        yemekAdapter = new ASYemekAdapter(yemekListesi);
+        yemekAdapter = new ASYemekHaneAdapter(yemekListesi);
         recyclerView.setAdapter(yemekAdapter);
     }
 }

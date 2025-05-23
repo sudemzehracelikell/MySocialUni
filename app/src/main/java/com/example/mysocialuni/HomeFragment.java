@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -28,12 +26,12 @@ public class HomeFragment extends Fragment {
     private Button akademikTakvimButton;
     private Button yemekhaneButton;
     private Button btnKulüpler;
+    private FrameLayout btnResimli2;
     private FrameLayout btnResimli1;
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
     private List<eventModel> eventList;
     private Typeface tf1;
-
     private AppCompatActivity appCompatActivity;
 
     @Override
@@ -52,6 +50,7 @@ public class HomeFragment extends Fragment {
         yemekhaneButton = view.findViewById(R.id.btnYemekhane);
         btnResimli1 = view.findViewById(R.id.btnResimli1);
         btnKulüpler = view.findViewById(R.id.btnKulupler);
+        btnResimli2 = view.findViewById(R.id.btnResimli2);
 
         tf1 = Typeface.createFromAsset(appCompatActivity.getAssets(), "fonts/yazı_tipi1.ttf");
         //text yazı tipi degıstırmek
@@ -63,6 +62,10 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
         });
 
+        btnResimli2.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ASTanıtımActivity.class);
+            startActivity(intent);
+        });
 
         profilButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), ProfileMenuActivity.class);
@@ -80,7 +83,7 @@ public class HomeFragment extends Fragment {
         });
 
         btnResimli1.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ASBoşSayfaActivity.class);
+            Intent intent = new Intent(getActivity(), ASHaberlerActivity.class);
             startActivity(intent);
         });
 
@@ -88,10 +91,14 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         eventList = new ArrayList<>();
-        eventList.add(new eventModel("18", "Mart", "Finans ve Stratejide Liderlik", "Etkinlik finansal stratejiler üzerine.", "Endüstri Mühendisliği Kulübü", "14:00", "15:00", R.drawable.as_etkinlikresim));
-        eventList.add(new eventModel("22", "Mart", "Yapay Zeka ve Geleceği", "Yapay zekanın geleceği üzerine konuşmalar.", "IEEE İSTÜN", "16:00", "17:00", R.drawable.as_etkinlikresim));
-        eventList.add(new eventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik hikayeleri.", "Girişimcilik Kulübü", "13:00", "14:30", R.drawable.as_etkinlikresim));
-
+        eventList.add(new eventModel("23", "Mayıs", "Doğadan Odaya: Koku Atölyesi", " ", "Etnobotanik Kulübü", "16:30", "18:00", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("22", "Mayıs", "İngilizce Hazırlık Birimi Kapanış Programı", " ", "İSTÜN", "12:30", "14:00", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("22", "Mayıs", "Yasla Tanışmak ve Film Analizi", " ", "Psikoloji Kulübü", "15:30", "17:30", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("22", "Mayıs", "TÜBİTAK 2209-A VE 2209-B ", " ", "İSTÜN", "14:00", "16:00", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("21", "Mayıs", "Sarajevo’da Mimarlık ve Fotoğraf  Söyleşi", " ", "Mimarlık ve Tasarim Kulübü", "11:00", "12:30", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("21", "Mayıs", "Profesyonel CV Hazırlama ve Mülakat Süreçleri", " ", " İSTÜN", "13:30", "15:30", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("20", "Mayıs", "Yüz Yogası Sağlıklı Ciltler 2", " ", "Yoga ve Sağlıklı Yaşam Kulübü", "12:30", "13:30", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("20", "Mayıs", "NEXTMED Öğrenci Sempozyumu ", " ", "Öğrenci Bilimsel Araştırma Kulübü", "8:30", "18:30", R.drawable.as_etkinlikresim));
 
         Collections.sort(eventList); // tarih sıralaması için
 

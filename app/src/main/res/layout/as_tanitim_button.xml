@@ -1,13 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#131313">
 
-    <Button
-        android:id="@+id/geri_don_button"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ana Sayfaya Dön"
-        android:layout_centerInParent="true" />
-</RelativeLayout>
+        android:paddingTop="45dp"
+        android:paddingBottom="16dp">
+
+        <Button
+            android:id="@+id/geri_don_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:background="?attr/homeAsUpIndicator"
+            android:backgroundTint="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/sayfa_baslik"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="İSTÜN"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/banner_gorsel"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/as_tanitim_button1"
+                android:contentDescription="Banner Görsel"
+                android:adjustViewBounds="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:text="İstanbul Sağlık ve Teknoloji Üniversitesi, 2020-2021 eğitim-öğretim yılı itibarıyla eğitime başlamış ve kısa sürede sağlık ve teknoloji alanlarında liderlik yolunda önemli adımlar atmıştır. Kuruluşunun ilk yılında, %100 doluluk oranı elde ederek vakıf üniversiteleri arasında en çok tercih edilen eğitim kurumlarından biri olmayı başarmıştır. Ayrıca, sunduğu burs olanakları ile de Türkiye'nin en çok burs veren üniversiteleri arasında ilk üçe girmeyi başarmıştır. Bu başarı, üniversitenin güçlü vizyonunun ve öğrenci odaklı eğitim anlayışının bir yansımasıdır." />
+
+            <ImageView
+                android:id="@+id/ic_gorsel_1"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/as_tanitim_button2"
+                android:contentDescription="İç Görsel 1"
+                android:adjustViewBounds="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:text="Üniversitemiz 18 Mayıs 2018 tarihli, 30425 sayılı Resmi Gazete’de yayımlanan Yükseköğretim Kanunu ile Bazı Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun uyarınca Bilgiç Vakfı önderliğinde kurulmuştur. Kurulduğu günden bu yana uzman akademik kadrodan son teknoloji ile donatılmış derslik ve laboratuvarlara kadar her türlü hazırlığını tamamlamış ve 2020-2021 eğitim öğretim yılında eğitime başlamıştır." />
+
+            <ImageView
+                android:id="@+id/ic_gorsel_2"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/as_tanitim_button3"
+                android:contentDescription="İç Görsel 2"
+                android:adjustViewBounds="true" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
