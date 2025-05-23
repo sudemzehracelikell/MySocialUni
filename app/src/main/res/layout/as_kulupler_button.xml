@@ -6,37 +6,46 @@
     android:layout_height="match_parent"
     android:background="#131313">
 
-    <Button
-        android:id="@+id/geri_don_button2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="45dp"
-        android:background="?attr/homeAsUpIndicator"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/sayfa_baslik"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="30dp"
-        android:gravity="center"
-        android:text="Kulüpler"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
+    <!-- Üst Başlık Alanı -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ust_baslik_alani"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/geri_don_button2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <Button
+            android:id="@+id/geri_don_button2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:background="?attr/homeAsUpIndicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/sayfa_baslik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kulüpler"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Scrollable İçerik -->
     <ScrollView
         android:id="@+id/kart_scroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/sayfa_baslik"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/ust_baslik_alani"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -51,9 +60,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mesleki Kulüpleri"
+                android:layout_marginTop="16dp"
                 android:textSize="24sp"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"
                 android:paddingBottom="12dp"/>
 
             <LinearLayout
@@ -69,7 +78,8 @@
                 android:text="Sosyal Kulüpleri"
                 android:textSize="24sp"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"
+
+                android:paddingTop="16dp"
                 android:paddingBottom="12dp"/>
 
             <LinearLayout
@@ -85,7 +95,8 @@
                 android:text="Spor Kulüpleri"
                 android:textSize="24sp"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"
+
+                android:paddingTop="16dp"
                 android:paddingBottom="12dp"/>
 
             <LinearLayout
@@ -96,6 +107,5 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
