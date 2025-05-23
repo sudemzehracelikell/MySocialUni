@@ -23,6 +23,7 @@ public class EventFragment extends Fragment {
     private RecyclerView recyclerView;
     private EventAdapter eventAdapter;
     private List<eventModel> eventList;
+    private Button profilButton;
     private Typeface tf2;
 
     public EventFragment() {
@@ -33,6 +34,8 @@ public class EventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event, container, false);
+
+        profilButton = view.findViewById(R.id.profil_button);
 
         tf2 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/yazı_tipi1.ttf");
         TextView homeText = view.findViewById(R.id.event_text);
@@ -45,6 +48,12 @@ public class EventFragment extends Fragment {
         etkinlikEkleButton.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), AddEventActivity.class);
             startActivityForResult(intent, 100); // 100 bizim tanımladığımız istek kodu
+        });
+
+
+        profilButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ProfileMenuActivity.class);
+            startActivity(intent);
         });
 
         // Örnek etkinlikler

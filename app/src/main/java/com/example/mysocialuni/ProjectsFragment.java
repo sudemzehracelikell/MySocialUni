@@ -29,7 +29,7 @@ public class ProjectsFragment extends Fragment {
 
     private ListView listViewProjects;
     private ArrayList<ProjectsItem> projectArrayList;
-
+    private Button profilButton;
     private TextView textView_title;
     private ImageView imageView_backgroundProjects;
     private Button button_addProject;
@@ -53,7 +53,6 @@ public class ProjectsFragment extends Fragment {
         // fragment_projects.xml dosyasını bağla
         return inflater.inflate(R.layout.fragment_projects, container, false);
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +62,7 @@ public class ProjectsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        profilButton = view.findViewById(R.id.profil_button);
         init(view);
         textView_title.setTypeface(Typeface.createFromAsset(appCompatActivity.getAssets(), "fonts/yazı_tipi1.ttf"));
 
@@ -86,6 +85,11 @@ public class ProjectsFragment extends Fragment {
         }
 
         button_addProject.setOnClickListener(v -> startActivity(new Intent(appCompatActivity, AddProjectActivity.class)));
+
+        profilButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ProfileMenuActivity.class);
+            startActivity(intent);
+        });
 
         listViewProjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
