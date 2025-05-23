@@ -86,10 +86,14 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         eventList = new ArrayList<>();
-        eventList.add(new eventModel("18", "Mart", "Finans ve Stratejide Liderlik", "Etkinlik finansal stratejiler üzerine.", "Endüstri Mühendisliği Kulübü", "14:00", "15:00", R.drawable.as_etkinlikresim));
-        eventList.add(new eventModel("22", "Mart", "Yapay Zeka ve Geleceği", "Yapay zekanın geleceği üzerine konuşmalar.", "IEEE İSTÜN", "16:00", "17:00", R.drawable.as_etkinlikresim));
-        eventList.add(new eventModel("5", "Nisan", "Kariyer Sohbetleri", "Girişimcilik hikayeleri.", "Girişimcilik Kulübü", "13:00", "14:30", R.drawable.as_etkinlikresim));
-
+        eventList.add(new eventModel("23", "Mayıs", "Doğadan Odaya: Koku Atölyesi", " ", "Etnobotanik Kulübü", "16:30", "18:00", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("22", "Mayıs", "İngilizce Hazırlık Birimi Kapanış Programı", " ", "İSTÜN", "12:30", "14:00", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("22", "Mayıs", "Yasla Tanışmak ve Film Analizi", " ", "Psikoloji Kulübü", "15:30", "17:30", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("22", "Mayıs", "TÜBİTAK 2209-A VE 2209-B ", " ", "İSTÜN", "14:00", "16:00", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("21", "Mayıs", "Sarajevo’da Mimarlık ve Fotoğraf  Söyleşi", " ", "Mimarlık ve Tasarim Kulübü", "11:00", "12:30", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("21", "Mayıs", "Profesyonel CV Hazırlama ve Mülakat Süreçleri", " ", " İSTÜN", "13:30", "15:30", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("20", "Mayıs", "Yüz Yogası Sağlıklı Ciltler 2", " ", "Yoga ve Sağlıklı Yaşam Kulübü", "12:30", "13:30", R.drawable.as_etkinlikresim));
+        eventList.add(new eventModel("20", "Mayıs", "NEXTMED Öğrenci Sempozyumu ", " ", "Öğrenci Bilimsel Araştırma Kulübü", "8:30", "18:30", R.drawable.as_etkinlikresim));
 
         Collections.sort(eventList); // tarih sıralaması için
 

@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:text="Yeni Teknoloji Haberi Yayında"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 android:gravity="center" />
         </LinearLayout>
