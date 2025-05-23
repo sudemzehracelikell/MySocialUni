@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -80,7 +78,7 @@ public class HomeFragment extends Fragment {
         });
 
         btnResimli1.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ASBoşSayfaActivity.class);
+            Intent intent = new Intent(getActivity(), ASHaberlerActivity.class);
             startActivity(intent);
         });
 

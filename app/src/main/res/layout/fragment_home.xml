@@ -109,8 +109,8 @@
                     android:padding="8dp">
 
                     <FrameLayout
-                        android:id="@+id/btnResimli2"
-                        android:layout_width="360dp"
+                        android:id="@+id/btnResimli1"
+                        android:layout_width="390dp"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="16dp"
                         android:clickable="true"
@@ -124,7 +124,8 @@
                             android:background="@drawable/as_resimbuton_background"
                             android:clipToOutline="true"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/as_haberler_button_pic" />
+                            android:src="@drawable/as_haberler_button_pic"
+                            />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -140,10 +141,10 @@
                     </FrameLayout>
 
                     <FrameLayout
-                        android:id="@+id/btnResimli1"
-                        android:layout_width="360dp"
+                        android:id="@+id/btnResimli2"
+                        android:layout_width="390dp"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginEnd="6dp"
                         android:clickable="true"
                         android:focusable="true"
                         android:foreground="?attr/selectableItemBackground">
@@ -155,7 +156,7 @@
                             android:background="@drawable/as_resimbuton_background"
                             android:clipToOutline="true"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/as_istun_foto" />
+                            android:src="@drawable/as_istun_foto"  />
 
                         <TextView
                             android:layout_width="match_parent"

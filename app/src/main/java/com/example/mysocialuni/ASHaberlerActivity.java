@@ -6,14 +6,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ASBoşSayfaActivity extends AppCompatActivity {
+public class ASHaberlerActivity extends AppCompatActivity {
 
     private Button geriDonButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.as_tanitim_button);  // XML layout dosyasını bağla
+        setContentView(R.layout.as_haberler_button);  // XML layout dosyasını bağla
 
         geriDonButton = findViewById(R.id.geri_don_button);  // Geri dön butonunu bul
 

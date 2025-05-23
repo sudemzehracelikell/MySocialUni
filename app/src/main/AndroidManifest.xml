@@ -45,12 +45,11 @@
         <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".ASEtkinliklerActivity" />
+
         <activity android:name=".ASYemekhaneActivity" />
         <activity android:name=".ASAkademikTakvimActivity" />
-        <activity android:name=".ASBoşSayfaActivity" />
-        <activity android:name=".ASBaşarılarActivity" />
+        <activity android:name=".ASHaberlerActivity" />
+        <activity android:name=".ProfileMenuActivity" />
         <activity android:name=".ASKulüplerActivity" />
         <activity
             android:name=".MainActivity"
