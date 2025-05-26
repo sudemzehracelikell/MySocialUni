@@ -178,17 +178,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
-                android:text="Yakın Etkinlikler"
+                android:text="Duyurular"
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewEventsHome"
+                android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:padding="1dp" />
+                android:layout_height="match_parent" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>
