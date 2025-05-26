@@ -27,7 +27,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_day"
+                android:id="@+id/duyuru_gun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="18"
@@ -37,7 +37,7 @@
                 android:layout_gravity="center" />
 
             <TextView
-                android:id="@+id/tv_month"
+                android:id="@+id/duyuru_ay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mart"
@@ -55,7 +55,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/duyuru_baslik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
