@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
+import android.app.AlertDialog;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,8 +36,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         holder.tvDay.setText(String.valueOf(event.day));
         holder.tvMonth.setText(event.getMonthName());
         holder.tvTitle.setText(event.title);
-        holder.tvClubAndTime.setText(event.getClubAndTime());
-        //holder.ivEvent.setImageResource(event.imageResId);
+        holder.tvClubAndTime.setText(event.clubName);
 
         // Detay sayfasına geçiş
         holder.itemView.setOnClickListener(v -> {
@@ -51,6 +52,33 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             intent.putExtra("resimId", event.imageResId);
             context.startActivity(intent);
         });
+
+        // Uzun basınca özel dialog ile silme
+        holder.itemView.setOnLongClickListener(v -> {
+            Context context = v.getContext();
+            LayoutInflater inflater = LayoutInflater.from(context);
+            View dialogView = inflater.inflate(R.layout.dialog_delete_event, null);
+
+            AlertDialog dialog = new AlertDialog.Builder(context)
+                    .setView(dialogView)
+                    .create();
+
+            Button btnSil = dialogView.findViewById(R.id.btnSil);
+            Button btnVazgec = dialogView.findViewById(R.id.btnVazgec);
+
+            btnSil.setOnClickListener(view -> {
+                eventList.remove(position);
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, eventList.size());
+                Toast.makeText(context, "Etkinlik silindi", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            });
+
+            btnVazgec.setOnClickListener(view -> dialog.dismiss());
+
+            dialog.show();
+            return true;
+        });
     }
 
     @Override
@@ -60,7 +88,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     public static class EventViewHolder extends RecyclerView.ViewHolder {
         TextView tvDay, tvMonth, tvTitle, tvClubAndTime;
-        //ImageView ivEvent;
 
         public EventViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -68,7 +95,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             tvMonth = itemView.findViewById(R.id.tv_month);
             tvTitle = itemView.findViewById(R.id.tv_title);
             tvClubAndTime = itemView.findViewById(R.id.tv_club_and_time);
-            //ivEvent = itemView.findViewById(R.id.iv_event); // XML içinde bu ID'ye sahip olmalı
         }
     }
 }
