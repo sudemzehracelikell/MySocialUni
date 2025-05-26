@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.Calendar;
+import java.util.Iterator;
+
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -66,31 +69,35 @@ public class EventFragment extends Fragment {
                 "Hazırlık öğrencileri için düzenlenen bu etkinlik, dönemin kapanışını keyifli bir şekilde kutlamayı hedefliyor. Programda öğrencilere sürpriz ödüller, müzik dinletileri ve eğlenceli aktiviteler sunulacak. Ayrıca öğretim elemanlarına teşekkürlerin iletileceği bir kapanış konuşması yapılacak. Etkinlik, hazırlık yılı boyunca kaynaşan öğrencilerin vedalaşmasına vesile olacak. İSTÜN organizasyonuyla gerçekleşmektedir.",
                 "İSTÜN", "12:30", "14:00", R.drawable.inghazirlik));
 
-        eventList.add(new eventModel("22", "Mayıs", "Yasla Tanışmak ve Film Analizi",
+        eventList.add(new eventModel("31", "Mayıs", "Yasla Tanışmak ve Film Analizi",
                 "Etkinlikte, katılımcılar yaş kavramı üzerine derinlemesine düşünmeye davet ediliyor. Film gösteriminin ardından, yaşlanma, bireysel gelişim ve toplumsal algılar üzerine psikolojik bir analiz yapılacak. Açık tartışma formatında ilerleyen etkinlik, düşünsel etkileşimi teşvik ediyor. Psikoloji Kulübü tarafından organize edilen bu buluşma, farkındalık yaratmayı amaçlıyor.",
                 "Psikoloji Kulübü", "15:30", "17:30", R.drawable.yaslatanismak));
 
-        eventList.add(new eventModel("22", "Mayıs", "TÜBİTAK 2209-A VE 2209-B",
+        eventList.add(new eventModel("30", "Mayıs", "TÜBİTAK 2209-A VE 2209-B",
                 "Bu etkinlikte, TÜBİTAK 2209-A ve 2209-B programlarının başvuru süreçleri ve detayları anlatılacak. Öğrenciler, proje yazımı ve destek almanın incelikleri hakkında bilgi edinebilecek. Daha önce destek almış öğrenciler deneyimlerini paylaşacak. Bilimsel araştırmalara ilgi duyan herkesin katılımına açıktır. Etkinlik İSTÜN koordinasyonunda gerçekleşecektir.",
                 "İSTÜN", "14:00", "16:00", R.drawable.tubitak2209a));
 
-        eventList.add(new eventModel("21", "Mayıs", "Sarajevo’da Mimarlık Söyleşisi",
+        eventList.add(new eventModel("30", "Mayıs", "Sarajevo’da Mimarlık Söyleşisi",
                 "Sarajevo’nun mimari dokusu ve kentin tarihsel gelişimi üzerine ilham verici bir söyleşi gerçekleşecek. Fotoğraf sanatıyla mimarinin birleştiği bu etkinlikte, mimari mekanların görsel dili tartışılacak. Konuk konuşmacı deneyimlerini paylaşarak genç mimarlara ilham verecek. Etkinlik, kültürel perspektif kazandırmayı hedefliyor. Mimarlık ve Tasarım Kulübü tarafından düzenlenmiştir.",
                 "Mimarlık ve Tasarim Kulübü", "11:00", "12:30", R.drawable.sarav));
 
-        eventList.add(new eventModel("21", "Mayıs", "CV Hazırlama ve Mülakat Süreçleri",
+        eventList.add(new eventModel("29", "Mayıs", "CV Hazırlama ve Mülakat Süreçleri",
                 "Kariyer yolculuğuna hazırlanan öğrenciler için pratik bilgiler sunan bir etkinliktir. CV oluşturmanın püf noktaları, doğru formatlama ve içerik planlaması anlatılacak. Mülakat teknikleri, beden dili ve özgüven üzerine de uygulamalı öneriler verilecek. Katılımcılar, kariyer hedeflerini destekleyecek ipuçlarıyla etkinlikten ayrılacak. İSTÜN Kariyer Merkezi katkısıyla gerçekleştirilmektedir.",
                 "İSTÜN", "13:30", "15:30", R.drawable.procvhazirlama));
 
-        eventList.add(new eventModel("20", "Mayıs", "Yüz Yogası Sağlıklı Ciltler 2",
+        eventList.add(new eventModel("29", "Mayıs", "Yüz Yogası Sağlıklı Ciltler 2",
                 "Yüz kaslarını çalıştırarak sağlıklı ve genç bir görünüm elde etmeyi amaçlayan bir atölyedir. Katılımcılara yüz yogasının temel hareketleri gösterilecek ve birlikte uygulama yapılacaktır. Cilt sağlığına dair ipuçları ve doğal bakım önerileri de paylaşılacaktır. Etkinlik, beden-zihin bütünlüğünü destekleyen bir yaklaşımla sunulmaktadır. Yoga ve Sağlıklı Yaşam Kulübü ev sahipliğinde gerçekleşmektedir.",
                 "Yoga ve Sağlıklı Yaşam Kulübü", "12:30", "13:30", R.drawable.yuzyogasi));
 
-        eventList.add(new eventModel("20", "Mayıs", "NEXTMED Öğrenci Sempozyumu",
+        eventList.add(new eventModel("28", "Mayıs", "NEXTMED Öğrenci Sempozyumu",
                 "Tıp ve sağlık bilimleri alanındaki güncel araştırmaların paylaşıldığı öğrenci sempozyumudur. Etkinlikte çeşitli fakültelerden öğrenciler projelerini ve çalışmalarını sunacak. Alanında uzman konuşmacılar seminerler gerçekleştirecek. Bilimsel etkileşimi artırmayı ve iş birliği fırsatları yaratmayı amaçlamaktadır. Öğrenci Bilimsel Araştırma Kulübü tarafından organize edilmektedir.",
                 "Öğrenci Bilimsel Araştırma Kulübü", "8:30", "18:30", R.drawable.nextmed));
 
         Collections.sort(eventList);
+
+        //zamanı geçmiş etkinlikleri silmek için.
+        removePastEvents();
+
 
         eventAdapter = new EventAdapter(eventList);
         recyclerView.setAdapter(eventAdapter);
@@ -118,4 +125,21 @@ public class EventFragment extends Fragment {
             eventAdapter.notifyDataSetChanged();
         }
     }
+    private void removePastEvents() {
+        Calendar today = Calendar.getInstance();
+
+        Iterator<eventModel> iterator = eventList.iterator();
+        while (iterator.hasNext()) {
+            eventModel event = iterator.next();
+
+            Calendar eventDate = Calendar.getInstance();
+            eventDate.set(Calendar.MONTH, event.month - 1); // Java'da Ocak = 0
+            eventDate.set(Calendar.DAY_OF_MONTH, event.day);
+
+            if (eventDate.before(today)) {
+                iterator.remove(); // geçersizse sil
+            }
+        }
+    }
+
 }
