@@ -72,11 +72,32 @@ public class ProjectsFragment extends Fragment {
 
         int[] projectPhotos = {R.drawable.testbackground, R.drawable.testbackground2, R.drawable.testbackground3};
 
-        projectArrayList.add(new ProjectsItem("Kelime Macerası - Dil Öğrenme ve Hikaye Tabanlı Oyun", "Bu uygulama, kullanıcıların İngilizce veya başka bir dili öğrenirken hikaye tabanlı bir oyun oynamasını sağlar. Kullanıcılar bir karakter seçer ve interaktif bir hikaye boyunca ilerlerken doğru kelimeleri, seçerek bulmacaları çözer.", R.drawable.testbackground, kullanicilar, projectPhotos));
-        projectArrayList.add(new ProjectsItem("Kelime Macerası - Dil Öğrenme ve Hikaye Tabanlı Oyun", "Bu uygulama, kullanıcıların İngilizce veya başka bir dili öğrenirken hikaye tabanlı bir oyun oynamasını sağlar. Kullanıcılar bir karakter seçer ve interaktif bir hikaye boyunca ilerlerken doğru kelimeleri, seçerek bulmacaları çözer.", R.drawable.testbackground2, kullanicilar2, projectPhotos));
-        projectArrayList.add(new ProjectsItem("Kelime Macerası - Dil Öğrenme ve Hikaye Tabanlı Oyun", "Bu uygulama, kullanıcıların İngilizce veya başka bir dili öğrenirken hikaye tabanlı bir oyun oynamasını sağlar. Kullanıcılar bir karakter seçer ve interaktif bir hikaye boyunca ilerlerken doğru kelimeleri, seçerek bulmacaları çözer.", R.drawable.testbackground3, kullanicilar3, projectPhotos));
-        projectArrayList.add(new ProjectsItem("Kelime Macerası - Dil Öğrenme ve Hikaye Tabanlı Oyun", "Bu uygulama, kullanıcıların İngilizce veya başka bir dili öğrenirken hikaye tabanlı bir oyun oynamasını sağlar. Kullanıcılar bir karakter seçer ve interaktif bir hikaye boyunca ilerlerken doğru kelimeleri, seçerek bulmacaları çözer.", R.drawable.testbackground2, kullanicilar2, projectPhotos));
-        projectArrayList.add(new ProjectsItem("Kelime Macerası - Dil Öğrenme ve Hikaye Tabanlı Oyun", "Bu uygulama, kullanıcıların İngilizce veya başka bir dili öğrenirken hikaye tabanlı bir oyun oynamasını sağlar. Kullanıcılar bir karakter seçer ve interaktif bir hikaye boyunca ilerlerken doğru kelimeleri, seçerek bulmacaları çözer.", R.drawable.testbackground, kullanicilar, projectPhotos));
+        projectArrayList.add(new ProjectsItem(
+                "Kelime Macerası - Dil Öğrenme ve Hikaye Tabanlı Oyun",
+                "Bu uygulama, kullanıcıların İngilizce veya başka bir dili öğrenirken hikaye tabanlı bir oyun oynamasını sağlar. Kullanıcılar karakter seçerek maceraya atılır, doğru kelimeleri bularak hikayeyi ilerletir.",
+                R.drawable.testbackground, kullanicilar, projectPhotos));
+
+        projectArrayList.add(new ProjectsItem(
+                "Tarih Yolculuğu - Eğitsel Macera Oyunu",
+                "Kullanıcılar, farklı tarihi dönemlerde yolculuğa çıkarak olaylara tanıklık eder. İngilizce tarih terimlerini öğrenerek bulmacaları çözmeleri gerekir.",
+                R.drawable.testbackground3, kullanicilar2, projectPhotos));
+
+        projectArrayList.add(new ProjectsItem(
+                "Günlük İngilizce - Diyalog Bazlı Uygulama",
+                "Gerçek hayat senaryolarına dayalı kısa hikayeler ile kullanıcıların günlük İngilizce pratik yapmalarına yardımcı olur.",
+                R.drawable.testbackground2, kullanicilar3, projectPhotos));
+
+        projectArrayList.add(new ProjectsItem(
+                "Macera Adası - Çok Dilli Keşif Oyunu",
+                "Bir ada üzerinde geçen bu oyunda, kullanıcılar farklı dillerde görevler alır ve kelime hazinesini geliştirir. Her doğru cevap, yeni bir bölgeyi keşfetmelerini sağlar.",
+                R.drawable.testbackground, kullanicilar, projectPhotos));
+
+        projectArrayList.add(new ProjectsItem(
+                "Dil Dedektifi - Gizem Çözme Oyunu",
+                "Bu uygulamada kullanıcılar dedektif rolünü üstlenir, İngilizce ipuçlarını çözerek olayların arkasındaki gerçeği bulmaya çalışır.",
+                R.drawable.testbackground2,
+                kullanicilar2,
+                projectPhotos));
 
         listViewProjects.setAdapter(new ProjectAdapter(projectArrayList, appCompatActivity));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
